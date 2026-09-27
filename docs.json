@@ -31,10 +31,10 @@
           {
             "group": "Mantenimiento",
             "pages": [
-              "mantenimiento/lineas-de-productos",
               "mantenimiento/clientes",
               "mantenimiento/proveedores",
               "mantenimiento/productos",
+              "mantenimiento/lineas-de-productos",
               "mantenimiento/atributos",
               "mantenimiento/unidades-de-medida",
               "mantenimiento/usuarios"
