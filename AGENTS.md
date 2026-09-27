@@ -1,33 +1,27 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
-
 # Documentation project instructions
 
 ## About this project
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Use the Mintlify MCP server, `https://mcp.mintlify.com`, to edit content and settings via MCP
-- Use the Mintlify docs MCP server, `https://www.mintlify.com/docs/mcp`, to query information about using Mintlify via MCP
+- Documentación de uso de FacilPOS ([https://pos.facilerp.com](https://pos.facilerp.com)), el punto de venta de FacilERP.
+- Sitio construido con [Mintlify](https://mintlify.com): páginas MDX con frontmatter YAML; configuración en `docs.json`.
+- La navegación sigue el menú de la aplicación: Primeros pasos, Comprobantes, Mantenimiento, Reportes, Configuración y Ayuda.
 
 ## Terminology
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+- Use los nombres exactos de la interfaz en **negrita**: **Registrar**, **\+ Añadir Item**, **Seleccionar Cliente**, **Grabar**.
+- "Variedad" es el nombre que usa FacilPOS para un producto o servicio.
+- "Comprobante" = Factura, Boleta de Venta o Ticket. La "Nota de Pedido" es un documento interno que no se registra en contabilidad.
+- Rutas de menú con flecha: **Comprobantes → Ventas**.
 
 ## Style preferences
 
-{/* Add any project-specific style rules below */}
-
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
+- Español, tratamiento de "usted".
+- Oraciones cortas, una idea por oración.
+- Procedimientos con `<Steps>`; advertencias con `<Warning>`, notas con `<Note>`, consejos con `<Tip>`; preguntas frecuentes con `<AccordionGroup>`.
+- Capturas en `/images/<sección>/`, recortadas al área relevante, con un recuadro rojo en el campo o botón clave. No se capturan listas desplegables: se mencionan sus opciones en el texto.
 
 ## Content boundaries
 
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Documente solo lo que existe en la aplicación; no invente funciones.
+- Para ejemplos de ventas use una **Nota de Pedido** a FACILSOFT E.I.R.L. (RUC 20601863228), nunca un comprobante real.
+- Los errores de la aplicación se reportan al equipo de desarrollo; en la documentación solo se incluyen si el usuario necesita una solución temporal.

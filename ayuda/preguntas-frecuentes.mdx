@@ -1,0 +1,33 @@
+---
+title: "Preguntas frecuentes"
+sidebarTitle: "Preguntas frecuentes"
+description: "Respuestas a las dudas más comunes al usar FacilPOS."
+icon: "circle-question"
+---
+
+<AccordionGroup>
+  <Accordion title="¿Qué diferencia hay entre una Nota de Pedido y una Factura?">
+    La **Factura**, la **Boleta de Venta** y el **Ticket** son comprobantes de venta. La **Nota de Pedido** es un documento interno: se guarda en el sistema pero no se registra en contabilidad. Vea [Registrar una venta](/comprobantes/registrar-venta).
+  </Accordion>
+  <Accordion title="¿Cómo entrego precios sin registrar una venta?">
+    Use [Cotizaciones](/comprobantes/cotizaciones).
+  </Accordion>
+  <Accordion title="¿Los precios incluyen IGV?">
+    Por defecto, sí: el precio que ingresa en un ítem con **Aplicar Impuestos** activado ya incluye IGV. Por ejemplo, un ítem de S/ 100.00 da Subtotal S/ 84.75 e IGV S/ 15.25. Si su empresa prefiere ingresar precios sin IGV, esta opción se cambia en la configuración de FacilERP.
+  </Accordion>
+  <Accordion title="No encuentro un producto al vender">
+    Desactive **Existencias (Con stock disponible)** para ver también los productos sin stock, o cambie **Filtrar por** a Código. Si el producto no existe, regístrelo en [Productos](/mantenimiento/productos).
+  </Accordion>
+  <Accordion title="El precio de un producto aparece en S/ 0.00">
+    El producto no tiene precio en la lista de precios elegida. Ingréselo a mano en el ítem o regístrelo en la pestaña **Precios** del [producto](/mantenimiento/productos).
+  </Accordion>
+  <Accordion title="La búsqueda de clientes dice «No data available»">
+    Revise el texto o cambie el filtro a Número de Documento. Si el cliente no existe, créelo con **+ Nuevo**. Vea [Clientes](/mantenimiento/clientes).
+  </Accordion>
+  <Accordion title="¿Cómo busco un comprobante que ya emití?">
+    En **Comprobantes → Consultas**, filtrando por fecha, tipo o cliente. Vea [Consultas](/comprobantes/consultas).
+  </Accordion>
+  <Accordion title="¿Quién puede crear usuarios?">
+    Un usuario con acceso a **Mantenimiento → Usuarios**. Los roles disponibles son ADMINISTRADOR y VENTAS. Vea [Usuarios](/mantenimiento/usuarios).
+  </Accordion>
+</AccordionGroup>

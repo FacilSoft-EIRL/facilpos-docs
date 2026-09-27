@@ -1,49 +1,37 @@
 ---
-title: "FacilPOS: Point of Sale for FacilERP"
-sidebarTitle: "Home"
-description: "Welcome to FacilPOS — the integrated point-of-sale module of FacilERP. Process sales, manage inventory, and run reports from one unified system."
+title: "FacilPOS"
+sidebarTitle: "Inicio"
+description: "Guía de uso de FacilPOS, el punto de venta de FacilERP: comprobantes, clientes, productos, reportes y configuración."
 ---
 
-FacilPOS is the point-of-sale module built into FacilERP. It brings together sales processing, inventory management, customer tracking, and business reporting in one seamless interface — so your team can focus on serving customers rather than managing software.
+FacilPOS es el punto de venta web de FacilERP. Desde [pos.facilerp.com](https://pos.facilerp.com) usted emite facturas, boletas, tickets y notas de pedido, registra cotizaciones, mantiene sus clientes y productos, y consulta reportes de ventas, caja e inventario.
 
 <CardGroup cols={2}>
-  <Card title="Quick Start" icon="rocket" href="/quickstart">
-    Set up your first register and process your first sale in minutes.
+  <Card title="Ingresar a FacilPOS" icon="right-to-bracket" href="/primeros-pasos/ingreso">
+    Inicie sesión con su RUC y conozca la pantalla de Inicio.
   </Card>
-  <Card title="Key Concepts" icon="book-open" href="/key-concepts">
-    Learn the core terminology and workflows that power FacilPOS.
+
+  <Card title="Registrar una venta" icon="cart-shopping" href="/comprobantes/registrar-venta">
+    Emita un comprobante de venta paso a paso.
   </Card>
-  <Card title="Point of Sale" icon="cash-register" href="/pos/dashboard">
-    Explore the sales dashboard, payment flows, and receipt management.
+
+  <Card title="Clientes y productos" icon="box" href="/mantenimiento/productos">
+    Registre los clientes, productos y datos maestros que usa al vender.
   </Card>
-  <Card title="Products & Inventory" icon="box" href="/inventory/products">
-    Manage your product catalog, categories, and stock levels.
-  </Card>
-  <Card title="Reports & Analytics" icon="chart-bar" href="/reports/sales-reports">
-    Track sales performance, cash register sessions, and inventory trends.
-  </Card>
-  <Card title="Configuration" icon="gear" href="/configuration/store-setup">
-    Configure your store, users, payment methods, and ERP integrations.
+
+  <Card title="Reportes" icon="chart-column" href="/reportes/ventas">
+    Consulte ventas, caja diaria, cuentas por cobrar e inventario.
   </Card>
 </CardGroup>
 
-## Getting Started
+## Cómo está organizado FacilPOS
 
-<Steps>
-  <Step title="Set Up Your Store">
-    Log in to FacilERP and navigate to **FacilPOS → Configuration → Store Setup**. Enter your business name, tax settings, and currency.
-  </Step>
-  <Step title="Add Your Products">
-    Go to **Inventory → Products** to create your product catalog. Assign categories, set prices, and configure stock levels.
-  </Step>
-  <Step title="Configure Payment Methods">
-    Under **Configuration → Payment Methods**, enable cash, card, or any other payment types your store accepts.
-  </Step>
-  <Step title="Open a Register Session">
-    Head to **Point of Sale → Dashboard**, open a new cash register session, and start processing sales.
-  </Step>
-</Steps>
+El menú lateral (≡) de FacilPOS tiene cinco secciones. Esta guía sigue el mismo orden.
 
-<Tip>
-  FacilPOS is fully integrated with FacilERP — changes to products, pricing, and customers sync automatically across all modules.
-</Tip>
+| Sección del menú | Qué encuentra |
+| --- | --- |
+| **Inicio** | Resumen del mes y comprobantes recientes. |
+| **Configuración** | Moneda, almacenes visibles y valores por defecto del punto de venta. |
+| **Comprobantes** | Consultas, Ventas, Cotizaciones y Autorizaciones. |
+| **Mantenimiento** | Clientes, proveedores, productos (variedades), líneas de productos, atributos, unidades de medida y usuarios. |
+| **Reportes** | Ventas, Finanzas e Inventario. |

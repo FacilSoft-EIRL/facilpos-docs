@@ -11,70 +11,58 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Guía de uso",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Primeros pasos",
             "pages": [
-              "introduction",
-              "quickstart",
-              "key-concepts"
+              "primeros-pasos/ingreso"
             ]
           },
           {
-            "group": "Point of Sale",
+            "group": "Comprobantes",
             "pages": [
-              "pos/dashboard",
-              "pos/new-sale",
-              "pos/payments",
-              "pos/receipts",
-              "pos/returns-refunds"
+              "comprobantes/registrar-venta",
+              "comprobantes/consultas",
+              "comprobantes/cotizaciones",
+              "comprobantes/autorizaciones"
             ]
           },
           {
-            "group": "Products & Inventory",
+            "group": "Mantenimiento",
             "pages": [
-              "inventory/products",
-              "inventory/categories",
-              "inventory/stock-management",
-              "inventory/price-lists"
+              "mantenimiento/clientes",
+              "mantenimiento/proveedores",
+              "mantenimiento/productos",
+              "mantenimiento/lineas-de-productos",
+              "mantenimiento/atributos",
+              "mantenimiento/unidades-de-medida",
+              "mantenimiento/usuarios"
             ]
           },
           {
-            "group": "Customers",
+            "group": "Reportes",
             "pages": [
-              "customers/customer-management",
-              "customers/loyalty-discounts"
+              "reportes/ventas",
+              "reportes/finanzas",
+              "reportes/inventario"
             ]
           },
           {
-            "group": "Reports & Analytics",
+            "group": "Configuración",
             "pages": [
-              "reports/sales-reports",
-              "reports/cash-register",
-              "reports/inventory-reports"
-            ]
-          },
-          {
-            "group": "Configuration",
-            "pages": [
-              "configuration/store-setup",
-              "configuration/users-permissions",
-              "configuration/payment-methods",
-              "configuration/integrations"
+              "configuracion/ajustes"
             ]
           }
         ]
       },
       {
-        "tab": "Help & FAQ",
+        "tab": "Ayuda",
         "groups": [
           {
-            "group": "Troubleshooting",
+            "group": "Ayuda",
             "pages": [
-              "help/common-issues",
-              "help/hardware-setup",
-              "help/faqs"
+              "ayuda/preguntas-frecuentes"
             ]
           }
         ]
@@ -84,8 +72,9 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Get FacilERP",
-      "href": "https://facilsoft.com"
+      "label": "Ingresar a FacilPOS",
+      "href": "https://pos.facilerp.com"
     }
-  }
+  },
+  "description": "Guía de uso de FacilPOS, el punto de venta de FacilERP: comprobantes, clientes, productos, reportes y configuración."
 }
