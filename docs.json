@@ -84,8 +84,9 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Get FacilERP",
-      "href": "https://facilsoft.com"
+      "label": "Ingresar a FacilPOS",
+      "href": "https://pos.facilerp.com"
     }
-  }
+  },
+  "description": "Guía de uso de FacilPOS, el punto de venta de FacilERP: comprobantes, clientes, productos, reportes y configuración."
 }
