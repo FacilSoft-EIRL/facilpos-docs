@@ -1,37 +1,101 @@
 ---
 title: "Consulta de comprobantes"
 sidebarTitle: "Consultas"
-description: "Busque comprobantes emitidos por fecha, tipo o cliente, vea su detalle y descárguelos."
+description: "Busque facturas, boletas, tickets y notas de pedido por fecha, tipo o cliente, y descárguelos, imprímalos o compártalos."
 icon: "magnifying-glass"
 ---
 
-En **Comprobantes → Consultas** encuentra los comprobantes que ya registró: facturas, boletas, tickets y notas de pedido.
+En **Comprobantes → Consultas** encuentra todos los documentos que registró: facturas, boletas de venta, tickets, notas de pedido y más. Arriba de la lista, en **Filtrar por**, elija una de tres formas de buscar: **Fecha**, **Tipo** o **Cliente**.
 
-## Buscar comprobantes
+## Buscar por fecha
 
-<Steps>
-  <Step title="Elija cómo filtrar">
-    En **Filtrar por** elija **Fecha**, **Tipo** o **Cliente**. Con **Fecha**, indique el rango en **Desde** y **Hasta**; por defecto se muestra el día de hoy.
-  </Step>
-  <Step title="Revise la lista">
-    Cada comprobante muestra una etiqueta con su tipo (por ejemplo, **NP** para Nota de Pedido o **FV** para Factura), su número, la fecha, el cliente y el monto.
+Use este filtro para revisar lo emitido en un período.
 
-    <Frame>
-      <img src="/images/comprobantes/venta/consulta.jpg" alt="Lista de comprobantes filtrada por fecha" />
-    </Frame>
-  </Step>
-  <Step title="Abra el detalle">
-    Presione el ícono del ojo para ver el detalle: fecha de emisión, punto de venta, vendedor, tipo de documento, serie y número, forma de pago, moneda, tipo de cambio y los **Datos de Facturación** del cliente.
+1. Presione **Fecha**.
+2. Elija **Desde** y **Hasta** en el calendario. Por defecto, ambos muestran el día de hoy.
 
-    <Frame>
-      <img src="/images/comprobantes/venta/detalle-comprobante.jpg" alt="Detalle de un comprobante" />
-    </Frame>
-  </Step>
-  <Step title="Descargue el documento">
-    Use el ícono de descarga, arriba a la derecha del detalle.
-  </Step>
-</Steps>
+**Ejemplo:** para ver todo lo emitido en septiembre de 2026 hasta hoy, elija **Desde** 01-09-2026 y **Hasta** 27-09-2026. La lista muestra primero los documentos más recientes.
+
+<Frame>
+  <img src="/images/comprobantes/consultas/fecha.jpg" alt="Filtro por fecha del 01-09-2026 al 27-09-2026 con facturas y una nota de pedido" />
+</Frame>
+
+## Buscar por tipo, serie y número
+
+Use este filtro para ubicar un documento cuyo número conoce, o para listar todos los documentos de un tipo.
+
+1. Presione **Tipo**.
+2. Elija el **Tipo de comprobante**: Boleta de Venta, Cotización, Factura, Guia de Remisión, Nota de Crédito, Nota de Débito, Nota de Pedido, Nota de Salida, Percepción, Ticket o Vale de Crédito.
+3. Opcional: escriba la **Serie** y el **Numero**.
+
+**Ejemplo 1:** para ubicar la factura F001-10031, elija **Factura**, escriba la serie **F001** y el número **10031**.
+
+<Frame>
+  <img src="/images/comprobantes/consultas/tipo.jpg" alt="Filtro por tipo Factura, serie F001 y número 10031" />
+</Frame>
+
+**Ejemplo 2:** para ver todas las boletas, elija **Boleta de Venta** y deje la serie y el número vacíos.
 
 <Note>
-  Si no hay comprobantes en el rango elegido, aparece el mensaje "Busqueda de documentos sin resultados". Amplíe las fechas o cambie el filtro.
+  El filtro por tipo no usa fechas: muestra los documentos de ese tipo de cualquier fecha. Si cambia de tipo, borre la serie y el número del ejemplo anterior; de lo contrario, la lista quedará vacía.
+</Note>
+
+## Buscar por cliente
+
+Use este filtro para ver todo lo emitido a un cliente, de cualquier fecha.
+
+1. Presione **Cliente**.
+2. Escriba el **DNI / RUC** completo o parte del **Nombre cliente**.
+
+**Ejemplo 1:** escriba el RUC **20601863228** en **DNI / RUC** para ver los documentos de FACILSOFT E.I.R.L.
+
+<Frame>
+  <img src="/images/comprobantes/consultas/cliente.jpg" alt="Filtro por cliente con el RUC 20601863228" />
+</Frame>
+
+**Ejemplo 2:** escriba **SERCOPLUS** en **Nombre cliente** para ver todas las facturas de CORPORACION SERCOPLUS S.A.C. No necesita escribir el nombre completo.
+
+## Qué muestra la lista
+
+Cada documento muestra una etiqueta con su tipo, su número, la fecha, el cliente y el total:
+
+| Etiqueta | Tipo |
+| --- | --- |
+| **FV** | Factura |
+| **BV** | Boleta de Venta |
+| **NP** | Nota de Pedido |
+
+Un documento anulado muestra **ANULADO** en lugar del cliente y su total en rojo, en S/ 0.00.
+
+<Frame>
+  <img src="/images/comprobantes/consultas/anulado.jpg" alt="Boleta B001-8 anulada, con total S/ 0.00 en rojo" />
+</Frame>
+
+## Acciones de cada documento
+
+A la derecha de cada documento aparecen sus acciones. Las facturas y boletas tienen cuatro; la nota de pedido solo tiene **Ver**.
+
+| Ícono | Acción | Disponible en |
+| --- | --- | --- |
+| Flecha hacia abajo | **Descargar** el documento en PDF. | Factura, Boleta de Venta |
+| Impresora | **Imprimir** el documento. | Factura, Boleta de Venta |
+| Flecha curva | **Compartir** el PDF del documento con las opciones para compartir de su dispositivo. | Factura, Boleta de Venta |
+| Ojo | **Ver** el detalle del documento. | Todos los tipos |
+
+## Ver el detalle
+
+Presione el ojo para abrir el detalle. Incluye:
+
+- **Cabecera:** fecha de emisión, punto de venta, vendedor, tipo de documento, serie, número, forma de pago, moneda de facturación y tipo de cambio.
+- **Datos de Facturación:** número de documento, nombre, teléfono, email y dirección del cliente.
+- **Items:** código, descripción, cantidad y precio de cada ítem, con **Precio venta**, **Descuento Global**, **Subtotal**, **IGV** y **Total**.
+
+<Frame>
+  <img src="/images/comprobantes/consultas/factura-items.jpg" alt="Ítems y totales en el detalle de la factura F001-10031" />
+</Frame>
+
+Para descargar el documento desde el detalle, use el ícono de descarga, arriba a la derecha.
+
+<Note>
+  Si no hay documentos que coincidan con el filtro, aparece el mensaje "Busqueda de documentos sin resultados". Amplíe las fechas o revise lo que escribió.
 </Note>
