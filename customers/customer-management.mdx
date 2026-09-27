@@ -1,10 +1,10 @@
 ---
-title: "Managing Customers in FacilPOS"
+title: "Customer Management in FacilPOS — Profiles & Groups"
 sidebarTitle: "Customers"
-description: "Add, search, and manage customer profiles in FacilPOS to personalize every sale, track purchase history, and sync records with FacilERP CRM."
+description: "Add, search, and manage customer profiles in FacilPOS to personalize every sale, track purchase history, and organize customers into groups."
 ---
 
-Customer accounts in FacilPOS let you build lasting relationships by attaching a name, contact details, and purchase history to every transaction. Whether you run a retail shop, a wholesale operation, or a multi-tier VIP program, centralizing customer data in FacilPOS means your staff always has the right context at the point of sale — and every record automatically syncs back to the FacilERP CRM module.
+Customer accounts in FacilPOS let you build lasting relationships by attaching a name, contact details, and purchase history to every transaction. Whether you run a retail shop, a wholesale operation, or a multi-tier VIP program, centralizing customer data in FacilPOS means your staff always has the right context at the point of sale — and every record is kept up to date across your FacilERP back office automatically.
 
 ## Creating a Customer
 
@@ -35,7 +35,7 @@ Customer accounts in FacilPOS let you build lasting relationships by attaching a
     </ParamField>
   </Step>
   <Step title="Save the profile">
-    Click **Save**. The customer record is created immediately and synced to the FacilERP CRM module.
+    Click **Save**. The customer record is created immediately and available across your FacilERP back office.
   </Step>
 </Steps>
 
@@ -92,7 +92,7 @@ A customer's complete purchase history is available directly from their profile.
     1. Open the customer's profile from **Customers → Customer List**.
     2. Click **Edit** in the top-right corner.
     3. Update any field — contact details, assigned price list, Tax ID, or notes.
-    4. Click **Save Changes**. Updates sync to FacilERP CRM automatically.
+    4. Click **Save Changes**. Updates are reflected across your FacilERP back office automatically.
   </Tab>
   <Tab title="Deactivate a Customer">
     1. Open the customer's profile.
@@ -131,13 +131,13 @@ Customer groups let you organize accounts by type — for example, **Retail**, *
 
 ---
 
-## Sync with FacilERP CRM
+## Related Pages
 
-Every customer record you create or update in FacilPOS is automatically mirrored in the FacilERP CRM module in real time — no manual export required.
+Every customer record you create or update in FacilPOS is kept in sync across your FacilERP back office automatically — no manual export required.
 
 <CardGroup cols={2}>
-  <Card title="POS → CRM Sync" icon="arrow-right-arrow-left" href="/configuration/integrations">
-    New customers, profile edits, and deactivations flow from FacilPOS to FacilERP CRM automatically via the built-in integration.
+  <Card title="Back-Office Integrations" icon="arrow-right-arrow-left" href="/configuration/integrations">
+    Review and manage the connections between FacilPOS and your broader FacilERP back-office data, including customer records.
   </Card>
   <Card title="Loyalty & Discounts" icon="tag" href="/customers/loyalty-discounts">
     Set up loyalty point programs and automatic discounts that apply to customers and groups at checkout.
@@ -145,5 +145,5 @@ Every customer record you create or update in FacilPOS is automatically mirrored
 </CardGroup>
 
 <Note>
-  If a customer already exists in FacilERP CRM, creating a matching record in FacilPOS (same Tax ID or email) will link the two profiles rather than duplicating them. Review the merge prompt carefully before confirming.
+  If a matching customer record already exists in your back office (identified by the same Tax ID or email), FacilPOS will prompt you to link the profiles rather than create a duplicate. Review the merge prompt carefully before confirming.
 </Note>

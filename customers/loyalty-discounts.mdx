@@ -1,5 +1,5 @@
 ---
-title: "Loyalty Programs and Discounts in FacilPOS"
+title: "Loyalty Points, Discounts, and Promotions in FacilPOS"
 sidebarTitle: "Loyalty & Discounts"
 description: "Configure loyalty point programs, automatic discounts, and promotional offers to reward customers and drive repeat sales in FacilPOS."
 ---
@@ -15,13 +15,13 @@ FacilPOS gives you a flexible toolkit to reward customers and incentivize purcha
 FacilPOS supports three discount types, each suited to a different promotion strategy:
 
 <CardGroup cols={2}>
-  <Card title="Percentage Discount" icon="percent" href="/customers/loyalty-discounts">
+  <Card title="Percentage Discount" icon="percent" href="/pos/new-sale">
     Reduces the price by a percentage (e.g., 15% off). Works at the item level or the entire order.
   </Card>
-  <Card title="Fixed Amount Discount" icon="dollar-sign" href="/customers/loyalty-discounts">
+  <Card title="Fixed Amount Discount" icon="dollar-sign" href="/pos/new-sale">
     Subtracts a fixed currency value (e.g., $5 off). Useful for vouchers and gift card promotions.
   </Card>
-  <Card title="Buy X Get Y" icon="gift" href="/customers/loyalty-discounts">
+  <Card title="Buy X Get Y" icon="gift" href="/pos/new-sale">
     Automatically adds a free or discounted item when a qualifying quantity is reached (e.g., buy 2, get 1 free).
   </Card>
   <Card title="Price Lists" icon="list" href="/inventory/price-lists">
@@ -166,7 +166,7 @@ Open the customer's profile from **Customers → Customer List** and select the 
   </Step>
   <Step title="Define the promotion details">
     <ParamField body="Promotion Name" type="string" required>
-      A descriptive internal name (e.g., *Weekend Drinks 20% Off*).
+      A clear, descriptive label for this promotion (e.g., *Weekend Drinks 20% Off*).
     </ParamField>
     <ParamField body="Discount Type" type="select" required>
       Choose Percentage, Fixed Amount, or Buy X Get Y.
