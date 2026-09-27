@@ -1,0 +1,83 @@
+---
+title: 'Printing and Sending Receipts in FacilPOS'
+sidebarTitle: 'Receipts'
+description: 'Print paper receipts, send digital copies by email, reprint past receipts, and customize receipt templates in FacilPOS.'
+---
+
+After every completed payment, FacilPOS gives you the option to deliver a receipt to the customer in the format that works best for them. You can print a paper receipt on a thermal printer, send a digital copy by email, or skip the receipt entirely for customers who don't need one. You can also reprint any past receipt from the sale history without re-opening the transaction.
+
+## Receipt Options
+
+When the payment confirmation screen appears, FacilPOS presents three receipt options. Select the one that matches the customer's preference.
+
+<Tabs>
+  <Tab title="Print Receipt">
+    <Steps>
+      <Step title="Click 'Print Receipt'">
+        Select **Print Receipt** on the post-payment confirmation screen. FacilPOS sends the receipt data to your configured thermal printer immediately.
+      </Step>
+      <Step title="Collect the receipt">
+        The thermal printer outputs the receipt within seconds. Hand it to the customer. If the printer does not respond, check the connection status in [Hardware Setup](/help/hardware-setup).
+      </Step>
+    </Steps>
+
+    <Tip>
+      Thermal printers must be configured in FacilPOS before they can print receipts. Visit [Hardware Setup](/help/hardware-setup) for a step-by-step connection guide and a list of supported printer models.
+    </Tip>
+  </Tab>
+
+  <Tab title="Email Receipt">
+    <Steps>
+      <Step title="Click 'Send by Email'">
+        Select **Send by Email** on the post-payment confirmation screen.
+      </Step>
+      <Step title="Enter or confirm the email address">
+        If a customer record is attached to the sale, FacilPOS pre-fills their email address. Otherwise, type the customer's email address into the field provided.
+      </Step>
+      <Step title="Send">
+        Click **Send**. FacilPOS dispatches a digital receipt to the address immediately. The customer receives a formatted email with the full receipt details and a transaction reference number.
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="No Receipt">
+    Click **No Receipt** (or **Skip**) to close the confirmation screen without delivering a receipt. The transaction is still fully recorded in FacilPOS and can be reprinted later if the customer changes their mind.
+  </Tab>
+</Tabs>
+
+## Reprinting a Past Receipt
+
+If a customer requests a receipt after the sale is closed, you can retrieve and reprint it from the sale history without voiding or editing the transaction.
+
+<Steps>
+  <Step title="Open Sale History">
+    From the dashboard, click **Sale History** in the top navigation or side menu.
+  </Step>
+  <Step title="Locate the transaction">
+    Search by date, customer name, transaction ID, or amount. Click the transaction row to open its detail view.
+  </Step>
+  <Step title="Reprint or resend">
+    In the transaction detail view, click **Print Receipt** to send it to the thermal printer, or click **Email Receipt** to resend the digital copy to the customer's email address.
+  </Step>
+</Steps>
+
+## Receipt Content
+
+Every FacilPOS receipt includes the following information by default:
+
+| Field | Details |
+|---|---|
+| Store name and address | Pulled from your store profile |
+| Date and time | Timestamp of the completed transaction |
+| Line items | Product name, quantity, unit price, and line total |
+| Discounts | Any item-level or order-level discounts applied |
+| Subtotal, tax, and total | Itemized financial summary |
+| Payment method | Cash, card type, or split breakdown |
+| Transaction ID | Unique reference number for lookups and returns |
+| Cashier name | Operator on duty at time of sale |
+
+## Customizing Receipt Templates
+
+You can add a custom header message (such as your store tagline), a footer message (such as return policy text or a thank-you note), and your store logo to every receipt.
+
+To make these changes, go to [Store Setup](/configuration/store-setup) and open the **Receipt Templates** section. Changes apply to both printed and emailed receipts immediately after saving.

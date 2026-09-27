@@ -1,0 +1,96 @@
+---
+title: 'FacilPOS Frequently Asked Questions'
+sidebarTitle: 'FAQs'
+description: 'Answers to the most common questions about FacilPOS features, licensing, offline use, data management, and ERP integrations.'
+---
+
+Whether you are evaluating FacilPOS, onboarding your team, or managing a live store, this page answers the questions we hear most often. If you cannot find what you are looking for here, visit the [Common Issues](/help/common-issues) guide or reach out to FacilSoft support.
+
+<AccordionGroup>
+  <Accordion title="Do I need FacilERP to use FacilPOS?">
+    Yes. FacilPOS is a module within the FacilERP platform and cannot run independently. You need an active FacilERP subscription to access FacilPOS. All product, customer, and financial data is stored and managed in FacilERP, and FacilPOS relies on that data for every sale.
+
+    To get started, contact [FacilSoft](https://www.facilsoft.com) or speak to your FacilERP account manager.
+  </Accordion>
+
+  <Accordion title="Can I use FacilPOS offline?">
+    Offline capability depends on your FacilERP deployment mode. In a **cloud-hosted** deployment, FacilPOS requires an active internet connection to process sales and sync data. In an **on-premises** deployment, FacilPOS can continue to operate on your local network even if external internet access is unavailable.
+
+    Check with your FacilERP administrator to confirm which deployment mode your organisation uses and what your offline contingency options are.
+  </Accordion>
+
+  <Accordion title="How many registers can I have?">
+    The number of POS registers (tills) available to you depends on your FacilERP subscription plan. Entry-level plans typically include one or two registers, while higher-tier plans support unlimited registers across multiple locations.
+
+    Contact [FacilSoft](https://www.facilsoft.com) to review your current plan or upgrade to add more registers.
+  </Accordion>
+
+  <Accordion title="Can I run FacilPOS on a tablet or mobile device?">
+    Yes. FacilPOS is entirely browser-based, so it runs on any modern web browser regardless of device. This includes tablets running iPadOS, Android, or Windows, as well as laptops and desktop computers. For the best experience on a tablet, use a current version of Chrome, Safari, or Edge in landscape orientation.
+
+    No app installation is required — simply navigate to your FacilERP URL in the browser.
+  </Accordion>
+
+  <Accordion title="How is my sales data backed up?">
+    All sales data is stored directly in FacilERP and is backed up according to the backup schedule defined in your FacilERP hosting plan. For cloud-hosted customers, FacilSoft performs automatic daily backups with point-in-time recovery. For on-premises customers, backup frequency and retention are managed by your IT team.
+
+    Contact your FacilERP administrator or FacilSoft support to review your current backup policy.
+  </Accordion>
+
+  <Accordion title="Can I import my existing product list?">
+    Yes. You can bulk-import products using a CSV file via **Inventory → Products → Import**. The import template includes columns for product name, SKU, barcode, category, price, and stock quantity.
+
+    Download the CSV template from the import screen, fill it in with your existing product data, and upload it. FacilPOS will validate the file and flag any rows with errors before committing the import.
+
+    For full instructions, see [Products](/inventory/products).
+  </Accordion>
+
+  <Accordion title="How do I give a cashier access to FacilPOS only?">
+    Create the user with the **Cashier** role. Users assigned the Cashier role can only access the POS module — they cannot view reports, modify products, change configuration, or access any other FacilERP module.
+
+    To create a user, go to **Configuration → Users & Permissions → Add User**, enter their details, and select **Cashier** from the Role dropdown.
+
+    For a full breakdown of roles and permissions, see [Users & Permissions](/configuration/users-permissions).
+  </Accordion>
+
+  <Accordion title="Can I have multiple currencies?">
+    FacilPOS operates in a single **functional currency** per store, which is set during store configuration. Multi-currency transactions (for example, accepting foreign cash and recording the exchange) are handled at the FacilERP level rather than within the POS module.
+
+    If your business regularly handles multiple currencies, speak to your FacilERP administrator about enabling multi-currency features in your FacilERP financial settings.
+  </Accordion>
+
+  <Accordion title="How do I apply a tax exemption for a specific customer?">
+    To exempt a specific customer from tax at checkout:
+
+    1. Create a **price list** with a tax rate of 0% in **Inventory → Price Lists**.
+    2. Assign that price list to the customer in **Customers → Customer Management → [Customer] → Price List**.
+    3. Alternatively, assign the customer to a **tax-exempt customer group** if your FacilERP configuration supports customer-group-level tax rules.
+
+    Once assigned, any sale made to that customer will automatically apply the 0% tax rate. See [Price Lists](/inventory/price-lists) and [Customer Management](/customers/customer-management) for details.
+  </Accordion>
+
+  <Accordion title="Where can I get support?">
+    FacilSoft support is available through two channels:
+
+    - **FacilERP Admin Portal** — log in to your FacilERP portal and open a support ticket from the Help section. This is the fastest route for account-specific issues.
+    - **FacilSoft website** — visit [facilsoft.com](https://www.facilsoft.com) for documentation, contact forms, and information about support plans.
+
+    Before contacting support, check the [Common Issues](/help/common-issues) page — many problems can be resolved without raising a ticket.
+  </Accordion>
+
+  <Accordion title="How do I update FacilPOS?">
+    You do not need to do anything. Updates to FacilPOS are delivered automatically as part of the FacilERP platform. New features, bug fixes, and security patches are applied by FacilSoft during scheduled maintenance windows.
+
+    For cloud-hosted customers, updates happen in the background with no action required on your part. For on-premises customers, your IT team applies FacilERP updates according to your organisation's change management process.
+  </Accordion>
+
+  <Accordion title="Can I customise the POS interface layout?">
+    Yes, several aspects of the POS interface are customisable:
+
+    - **Category icons and order** — reorder and assign icons to categories so the product grid matches your workflow
+    - **Product grid order** — drag and drop products within a category to control which items appear first
+    - **Receipt template** — customise the header, footer, logo, and fields shown on printed and digital receipts
+
+    All layout customisation is done in **Configuration → Store Setup**. For a full walkthrough, see [Store Setup](/configuration/store-setup).
+  </Accordion>
+</AccordionGroup>

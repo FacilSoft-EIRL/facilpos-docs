@@ -1,0 +1,169 @@
+---
+title: 'Configuring Payment Methods in FacilPOS'
+sidebarTitle: 'Payment Methods'
+description: 'Enable and configure cash, card, store credit, and other payment methods available at your FacilPOS registers for a smooth checkout experience.'
+---
+
+Payment methods control what tender options appear to your cashiers at checkout. FacilPOS supports cash, integrated card terminals, store credit, bank transfers, and fully custom payment types — each with its own configuration options. Enabling only the methods your business actively uses keeps the checkout screen clean and reduces cashier errors.
+
+## Navigating to Payment Settings
+
+Go to **FacilPOS → Configuration → Payment Methods**. You need a **Manager/Admin** role to make changes here. Each payment method listed has an **Enabled** toggle and a settings panel.
+
+---
+
+## Available Payment Types
+
+<Accordion title="Cash">
+  Cash is always available in FacilPOS and cannot be fully disabled. You can, however, control how change is calculated and rounded.
+
+  <ParamField body="Rounding Rule" type="select">
+    Choose how cash totals are rounded at the register:
+    - **No rounding** — exact amounts only
+    - **Round to nearest 0.05** — for currencies that have discontinued small coins
+    - **Round to nearest 0.10** or **1.00** — for simplified cash handling
+
+    Rounding adjustments appear as a separate line on the receipt so the transaction remains transparent.
+  </ParamField>
+
+  <ParamField body="Prompt for Amount Tendered" type="boolean">
+    When enabled, the cashier must enter the amount of cash received from the customer. FacilPOS then calculates and displays the exact change due.
+  </ParamField>
+</Accordion>
+
+<Accordion title="Credit / Debit Card">
+  Card payments require a physical payment terminal paired with FacilPOS. Once paired, card transactions are initiated from the POS screen and confirmed on the terminal — the cashier never manually enters card details.
+
+  See [Card Terminal Integration](#card-terminal-integration) below for pairing instructions.
+
+  <ParamField body="Accepted Card Networks" type="multiselect">
+    Select which networks your terminal accepts (e.g., Visa, Mastercard, Amex). This controls which icons appear on the payment screen — your terminal provider governs the actual acceptance rules.
+  </ParamField>
+
+  <ParamField body="Prompt for Tip" type="boolean">
+    When enabled, the terminal prompts the customer to add a tip before authorizing the payment. Tip amounts are recorded separately in sales reports.
+  </ParamField>
+</Accordion>
+
+<Accordion title="Store Credit">
+  Store credit is issued automatically when you process a refund without returning to the original payment method. Customers can redeem their balance at checkout.
+
+  <ParamField body="Allow Partial Redemption" type="boolean">
+    When enabled, customers can pay part of the total with store credit and cover the remainder with another payment method.
+  </ParamField>
+
+  <ParamField body="Expiry Period" type="number">
+    Number of days after which unused store credit expires. Set to `0` for no expiry.
+  </ParamField>
+
+  <Note>
+    Store credit balances are linked to customer accounts. A customer must be selected at the start of the sale for this payment option to appear at checkout.
+  </Note>
+</Accordion>
+
+<Accordion title="Bank Transfer">
+  Bank transfer is intended for B2B and wholesale orders where the customer pays by wire transfer after the sale is recorded.
+
+  <ParamField body="Payment Reference Label" type="string">
+    The label printed on the receipt for the reference number the customer should include in their transfer (e.g., "Invoice No." or "Order Ref.").
+  </ParamField>
+
+  <ParamField body="Bank Account Details on Receipt" type="boolean">
+    When enabled, your IBAN/account number and bank name are printed on the receipt to make it easy for the customer to complete the transfer.
+  </ParamField>
+
+  <Warning>
+    Bank transfer sales are recorded as paid in FacilPOS immediately. Reconcile these transactions in FacilERP Accounting once the transfer is confirmed in your bank account.
+  </Warning>
+</Accordion>
+
+<Accordion title="Custom Payment Type">
+  Add your own payment label for any tender not covered by the built-in types — gift cards from a third-party provider, meal vouchers, cryptocurrency, and so on.
+
+  <Steps>
+    <Step title="Add a Custom Type">
+      Click **Add Payment Method** and select **Custom**.
+    </Step>
+    <Step title="Name and Icon">
+      Enter a **Display Name** (shown to cashiers at checkout) and optionally choose an icon from the library.
+    </Step>
+    <Step title="Accounting Account">
+      Link the payment type to an **Accounting Account** in FacilERP so that transactions post to the correct ledger account automatically.
+    </Step>
+    <Step title="Save and Enable">
+      Click **Save**, then toggle the method **On**. It will appear as an option during checkout immediately.
+    </Step>
+  </Steps>
+</Accordion>
+
+---
+
+## Enabling and Disabling Payment Methods
+
+Each payment method has an **Enabled** toggle at the top of its settings panel. Disabling a method hides it from the cashier's payment screen — it will not appear as an option during checkout until you re-enable it.
+
+<Tip>
+  Enable only the payment methods you actively use. A focused payment screen reduces cashier hesitation and speeds up checkout, especially during busy periods.
+</Tip>
+
+---
+
+## Card Terminal Integration
+
+### Supported Terminals
+
+FacilPOS connects to payment terminals over your local network (IP pairing) or via USB/serial connection. Check the **Compatible Hardware** list in **Help → Hardware Setup** for models that have been tested and certified.
+
+### Pairing a Terminal
+
+<Steps>
+  <Step title="Connect the Terminal to Your Network">
+    Plug the terminal into your network switch or connect it to the same Wi-Fi network as your POS workstation. Note the terminal's IP address from its network settings screen.
+  </Step>
+  <Step title="Open Terminal Settings">
+    In **Configuration → Payment Methods**, expand **Credit / Debit Card** and click **Manage Terminals → Add Terminal**.
+  </Step>
+  <Step title="Enter Connection Details">
+    Select the connection type (**IP** or **Serial/USB**). For IP pairing, enter the terminal's IP address and port. For serial, select the correct COM port from the dropdown.
+  </Step>
+  <Step title="Name the Terminal">
+    Give the terminal a descriptive name (e.g., "Register 1 – Countertop"). This name appears in transaction logs.
+  </Step>
+  <Step title="Save and Test">
+    Click **Save Terminal**. The terminal entry appears in the list with a **Test Connection** button — use it to confirm the link before going live.
+  </Step>
+</Steps>
+
+### Testing the Terminal Connection
+
+Click **Test Connection** next to any paired terminal to send a test ping. A green **Connected** badge confirms the terminal is reachable. If the test fails:
+
+1. Confirm the terminal is powered on and connected to the network.
+2. Verify the IP address or port has not changed (terminals with DHCP can receive a new IP after a reboot — consider assigning a static IP).
+3. Check that no firewall rules are blocking the connection on the port used.
+
+---
+
+## Cash Rounding Rules
+
+If your local currency has discontinued small denominations, set a rounding rule so that cash totals are rounded to the nearest practical increment. The rounding difference is recorded as a minor gain or loss in your accounting reports and does not affect card or other non-cash payments.
+
+| Rounding Setting | Example Total | Rounded Total | Difference |
+|---|---|---|---|
+| No rounding | $10.03 | $10.03 | $0.00 |
+| Round to 0.05 | $10.03 | $10.05 | +$0.02 |
+| Round to 0.10 | $10.03 | $10.00 | −$0.03 |
+| Round to 1.00 | $10.60 | $11.00 | +$0.40 |
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Processing Payments" icon="circle-dollar-to-slot" href="/pos/payments">
+    See how cashiers use these payment methods during a sale.
+  </Card>
+  <Card title="Integrations" icon="plug" href="/configuration/integrations">
+    Connect payment data to FacilERP Accounting and other modules.
+  </Card>
+</CardGroup>

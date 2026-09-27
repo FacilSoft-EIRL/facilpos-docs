@@ -1,0 +1,124 @@
+---
+title: 'FacilPOS Key Concepts and Terminology'
+sidebarTitle: 'Key Concepts'
+description: 'Understand the core terms and workflows used throughout FacilPOS — from cash register sessions and SKUs to loyalty programs and ERP integration.'
+---
+
+FacilPOS uses a set of terms that appear consistently across every screen, report, and guide in this documentation. Understanding what each concept means — and how it relates to the others — will help you navigate the interface confidently and troubleshoot issues faster. The sections below define each term and point you to the deeper documentation where you can act on it.
+
+## Cash Register Session
+
+A **cash register session** (often called simply a *session*) is the period between opening and closing a till. Before you can process any sale, a supervisor or cashier must **open** a session and declare the **opening float** — the amount of cash physically placed in the drawer at the start of trading. When the trading period ends, a manager **closes** the session by counting the cash on hand and recording the **closing float**. FacilPOS compares expected and actual cash to produce a variance figure for your records.
+
+<Tip>
+  See [Cash Register Reports](/reports/cash-register) for a detailed look at session summaries, variance reports, and how to reconcile discrepancies.
+</Tip>
+
+## Sale / Transaction
+
+A **sale** (also called a *transaction*) is a single completed exchange in which a customer purchases one or more products. Each sale has a unique reference number, a timestamp, a list of line items, the payment method(s) used, and the user who processed it. Sales are the primary record FacilPOS produces and the data source for all sales reports and ERP postings.
+
+<Tip>
+  Learn how to create and manage sales on the [New Sale](/pos/new-sale) page.
+</Tip>
+
+## Product / SKU
+
+A **product** is any item you sell through FacilPOS. Every product has a **SKU** (Stock Keeping Unit) — a unique identifier used to look up the item by search, barcode scan, or manual entry at the POS. A single product can have multiple variants (for example, different sizes or colours), each with its own SKU, price, and stock level.
+
+<Tip>
+  Manage your product catalog in [Products](/inventory/products).
+</Tip>
+
+## Category
+
+A **category** groups related products together for easier browsing on the POS screen and for filtering in reports. For example, you might have categories named *Beverages*, *Electronics*, or *Accessories*. Categories are also used when applying category-level discounts or tax overrides.
+
+<Tip>
+  Set up and organise categories in [Categories](/inventory/categories).
+</Tip>
+
+## Price List
+
+A **price list** is a named set of product prices that can be assigned to specific customers, customer groups, or sales channels. This lets you offer wholesale pricing to trade customers while standard customers see retail prices — all within the same product catalog. FacilPOS automatically applies the correct price list when a matching customer account is added to a sale.
+
+<Tip>
+  Configure price lists in [Price Lists](/inventory/price-lists).
+</Tip>
+
+## Payment Method
+
+A **payment method** is any means by which a customer can settle a sale — cash, debit or credit card, mobile wallet, gift card, store credit, or a combination of these in a single split payment. Each payment method is configured separately in FacilPOS and can be tied to a specific hardware terminal or processing gateway.
+
+<Tip>
+  Add and configure payment methods in [Payment Methods](/configuration/payment-methods).
+</Tip>
+
+## Receipt
+
+A **receipt** is the proof-of-purchase document issued to the customer after a sale is completed. FacilPOS can produce receipts as a printed slip, an email, or both. Receipt templates are customisable — you can add your logo, promotional message, and return policy notice. Receipts are also required when processing a return against a specific sale.
+
+<Tip>
+  Customise your receipt templates in [Store Setup](/configuration/store-setup) and learn how receipts work during returns in [Returns & Refunds](/pos/returns-refunds).
+</Tip>
+
+## Return / Refund
+
+A **return** occurs when a customer brings back a purchased product. A **refund** is the monetary reimbursement issued as part of that return. FacilPOS supports full and partial returns, and can refund to the original payment method or issue store credit. Every return creates a negative transaction that reverses the original inventory movement and financial posting.
+
+<Tip>
+  Step through the returns workflow in [Returns & Refunds](/pos/returns-refunds).
+</Tip>
+
+## Customer Account
+
+A **customer account** is a profile stored in FacilERP that records a customer's contact details, purchase history, outstanding balance, and loyalty points. Linking a customer account to a sale enables price list pricing, loyalty rewards, and a complete transaction history the customer — or your team — can refer to later.
+
+<Tip>
+  Create and manage customer accounts in [Customer Management](/customers/customer-management).
+</Tip>
+
+## Loyalty Program
+
+A **loyalty program** rewards repeat customers by awarding points or credits on qualifying purchases. Points accumulate in the customer account and can be redeemed against future sales as a discount or form of payment. FacilPOS calculates points automatically at checkout when the customer account is attached to the sale.
+
+<Tip>
+  Set up loyalty rules and discount tiers in [Loyalty & Discounts](/customers/loyalty-discounts).
+</Tip>
+
+## Stock / Inventory Level
+
+A product's **stock level** (also called *inventory level* or *quantity on hand*) is the number of units currently available for sale at your store. FacilPOS decrements stock automatically with each sale and increments it with each return or stock receipt. When stock falls below the reorder point you define, FacilPOS raises a low-stock alert.
+
+<Tip>
+  Monitor and adjust stock levels in [Stock Management](/inventory/stock-management).
+</Tip>
+
+## User Role
+
+Every person who accesses FacilPOS is assigned a **user role** that controls what they can see and do:
+
+| Role | Typical Permissions |
+|------|---------------------|
+| **Cashier** | Process sales, accept payments, issue receipts, look up customers |
+| **Supervisor** | All Cashier permissions plus open/close sessions, apply manual discounts, process returns |
+| **Admin** | All Supervisor permissions plus configure store settings, manage users, access all reports |
+
+<Tip>
+  Define roles and assign them to staff in [Users & Permissions](/configuration/users-permissions).
+</Tip>
+
+## ERP Integration
+
+Because FacilPOS is a module inside FacilERP, it does not need a separate sync or export step to update other parts of your business. Every completed sale automatically:
+
+- **Decrements inventory** in the FacilERP inventory ledger.
+- **Posts a journal entry** to the FacilERP accounting module (debit cash/receivables, credit revenue).
+- **Updates the customer record** in FacilERP CRM with the latest purchase and loyalty balance.
+- **Feeds sales data** into FacilERP purchase planning so reorder suggestions stay current.
+
+This two-way, real-time flow means your back-office reporting and decision-making always reflect what is actually happening on the shop floor — with no manual imports or reconciliation required.
+
+<Tip>
+  Learn how to connect FacilPOS to third-party tools and additional FacilERP modules in [Integrations](/configuration/integrations).
+</Tip>

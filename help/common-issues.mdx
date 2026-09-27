@@ -1,0 +1,128 @@
+---
+title: 'Troubleshooting Common FacilPOS Issues'
+sidebarTitle: 'Common Issues'
+description: 'Diagnose and fix the most frequent FacilPOS problems, including sync errors, login issues, payment failures, and more.'
+---
+
+Even in a well-configured system, day-to-day issues can arise — a cashier can't log in, a receipt printer goes silent, or stock levels look wrong after a busy shift. This page walks you through the most common FacilPOS problems and the quickest paths to resolving them. Work through the relevant steps before escalating to your system administrator.
+
+<AccordionGroup>
+  <Accordion title="Cannot log in / PIN not accepted">
+    If your PIN is rejected at the login screen, try the following steps:
+
+    1. Check that **Caps Lock** is off — PINs are numeric, but keyboard state can interfere with entry on some devices.
+    2. Confirm you are entering the PIN assigned to your user account, not a previous one.
+    3. Ask your FacilPOS administrator to reset your PIN via **Configuration → Users & Permissions → [Your User] → Reset PIN**.
+    4. If the problem persists after a reset, contact your administrator to verify your account is active and has the correct role assigned.
+
+    <Note>
+      After five consecutive failed PIN attempts, your account may be temporarily locked. An administrator must unlock it from the Users & Permissions panel.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Sale not saving / session error">
+    If a sale fails to save or you see a session-related error message, the most likely cause is that no register session is currently open.
+
+    1. Navigate to **POS → Dashboard** and check whether an active session is displayed.
+    2. If no session is open, click **Open Session** and enter your opening cash amount.
+    3. Once a session is active, return to the sale and try again.
+    4. If a session is already open but errors persist, refresh the page to re-establish the connection. Unsaved items in the cart will need to be re-added.
+
+    <Warning>
+      Do not close your browser tab mid-sale without first saving or voiding the transaction. Doing so may leave the session in an inconsistent state.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Product not appearing in POS grid">
+    Products missing from the sales grid are almost always caused by one of three configuration issues:
+
+    1. **Product is inactive** — Go to **Inventory → Products**, find the product, and confirm its status is set to **Active**.
+    2. **No category assigned** — The POS grid organises products by category. Ensure the product is assigned to at least one category in **Inventory → Categories**.
+    3. **Stock is zero or stock tracking is blocking display** — If your POS is configured to hide out-of-stock items, either enable **Allow Sales Without Stock** for the product or replenish stock via **Inventory → Stock Management**.
+
+    After making any of these changes, refresh the POS screen to reload the product grid.
+  </Accordion>
+
+  <Accordion title="Payment terminal not responding">
+    If the card payment terminal is unresponsive during checkout, work through these steps in order:
+
+    1. Verify the terminal is **powered on** and shows a ready or idle screen.
+    2. Check the **network or serial cable** connection between the terminal and the POS device.
+    3. Restart the terminal using its power button and wait for it to fully reboot.
+    4. If the terminal still does not respond, re-pair it in FacilPOS: go to **Configuration → Payment Methods → Card Terminal** and follow the pairing instructions.
+    5. For persistent issues, consult your terminal manufacturer's documentation or contact your payment provider.
+
+    <Tip>
+      Keep the terminal's IP address static (reserved in your router) to avoid re-pairing every time the network refreshes.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Stock levels not updating after a sale">
+    If inventory quantities in FacilERP do not reflect recent POS sales, the ERP sync may be delayed or disabled.
+
+    1. Go to **Configuration → Integrations** and confirm that **ERP Sync** is toggled on.
+    2. Check the **Last Sync** timestamp. If it is stale, click **Run Manual Sync** to trigger an immediate update.
+    3. Review any sync error messages displayed on the Integrations page and resolve the flagged items.
+    4. If sync errors reference specific products, verify those products exist and are correctly mapped in both FacilPOS and FacilERP.
+
+    <Note>
+      Sync frequency is controlled by your FacilERP configuration. Contact your administrator if you need real-time stock updates.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Receipt printer not working">
+    A silent receipt printer is usually a connectivity or driver issue.
+
+    1. Confirm the printer is **powered on** and shows no error lights or paper-jam indicators.
+    2. Check the USB, network, or Bluetooth connection between the printer and the POS device.
+    3. On Windows, open **Devices and Printers** and confirm the printer appears and is set as default. On macOS, check **System Settings → Printers & Scanners**.
+    4. In FacilPOS, go to **Configuration → Store Setup → Receipt Printer** and click **Test Print** to send a test page.
+    5. If the test print fails, re-select the printer in the Store Setup configuration and save.
+
+    For full driver installation and connection instructions, see the [Hardware Setup guide](/help/hardware-setup).
+  </Accordion>
+
+  <Accordion title="Customer loyalty points not applied">
+    Loyalty points are only awarded when two conditions are met before the payment is processed.
+
+    1. Confirm the **loyalty program is enabled** in **Configuration → Store Setup → Loyalty Program**.
+    2. Ensure the **customer is selected** on the sale before you tap or click the payment button — points cannot be applied retroactively after payment.
+    3. Check that the customer's account is not suspended in **Customers → Customer Management**.
+    4. Verify the product or category is not excluded from the loyalty program in the program settings.
+
+    For a full explanation of how loyalty points are earned and redeemed, see [Loyalty & Discounts](/customers/loyalty-discounts).
+  </Accordion>
+
+  <Accordion title="Reports showing no data">
+    Empty reports are almost always a filter or session issue rather than a data loss problem.
+
+    1. Open the relevant report in **Reports** and check the **date range filter** — confirm it covers the period you expect to see data for.
+    2. Sales data only appears in reports after a **register session is closed**. If a session from that period is still open, close it first.
+    3. Verify you have the correct **store or register** selected if your report supports multi-location filtering.
+    4. If you recently ran a manual ERP sync, allow a few minutes for report data to refresh.
+
+    See [Sales Reports](/reports/sales-reports) and [Cash Register Reports](/reports/cash-register) for detailed filter guidance.
+  </Accordion>
+
+  <Accordion title="Refund failing">
+    Failed refunds usually stem from a permissions issue or a missing original transaction.
+
+    1. Confirm your user account has the **Supervisor** or **Manager** role — cashier-level accounts may not have refund permissions. Ask an administrator to grant access via **Configuration → Users & Permissions**.
+    2. Search for the original transaction by receipt number or date in **POS → Returns & Refunds**. The original transaction must be found before a refund can be processed.
+    3. For **card refunds**, the original payment terminal must be connected and paired — card refunds are processed back to the original card and require the terminal to be active.
+    4. Cash refunds do not require the terminal but do require sufficient cash in the drawer.
+
+    For step-by-step refund instructions, see [Returns & Refunds](/pos/returns-refunds).
+  </Accordion>
+
+  <Accordion title="Price list not applying at checkout">
+    If the expected price list is not being applied to a sale, check the following:
+
+    1. Confirm the price list is **active** in **Inventory → Price Lists** — inactive lists are ignored at checkout.
+    2. Verify the **customer is assigned** to the correct price list in **Customers → Customer Management → [Customer] → Price List**.
+    3. Ensure the **customer is selected** on the current sale before adding products — price lists are applied when the customer is attached, not after items are already in the cart.
+    4. Check that the products in the sale are **included** in the price list; some lists are scoped to specific categories or items.
+
+    For more on setting up and managing price lists, see [Price Lists](/inventory/price-lists).
+  </Accordion>
+</AccordionGroup>

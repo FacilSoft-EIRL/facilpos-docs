@@ -1,0 +1,117 @@
+---
+title: 'Inventory Reports and Stock Analysis in FacilPOS'
+sidebarTitle: 'Inventory Reports'
+description: 'Generate stock level reports, track inventory movements, and identify low-stock products to keep your shelves stocked and your costs in check.'
+---
+
+Inventory reports in FacilPOS let you see exactly what you have on hand, what has moved, and what is running low — without leaving the point-of-sale interface. Because FacilPOS updates stock levels in real time as you process sales and returns, every report reflects your true current position the moment you run it.
+
+## Navigate to Inventory Reports
+
+To access inventory reports, go to **FacilPOS → Reports → Inventory**. Select the report type you need from the panel on the left.
+
+## Available Report Types
+
+<CardGroup cols={2}>
+  <Card title="Current Stock Levels" icon="boxes-stacked" href="/reports/inventory-reports">
+    View on-hand quantities for all products or filter by category. Use this report for a snapshot of your entire inventory at any point in time.
+  </Card>
+  <Card title="Low Stock Alert Report" icon="triangle-exclamation" href="/reports/inventory-reports">
+    See every product whose current stock has fallen below its configured reorder threshold, sorted by urgency.
+  </Card>
+  <Card title="Inventory Movement Report" icon="arrow-right-arrow-left" href="/reports/inventory-reports">
+    Track every stock change within a date range — including units sold, returns processed, and manual adjustments — with a line-by-line audit trail.
+  </Card>
+  <Card title="Stock Valuation Report" icon="dollar-sign" href="/reports/inventory-reports">
+    Calculate the total value of your inventory at either cost price or sale price to support financial reporting and shrinkage analysis.
+  </Card>
+</CardGroup>
+
+### Current Stock Levels
+
+The current stock levels report shows the on-hand quantity for every active product.
+
+- **Filter by category** — use the **Category** dropdown to narrow the report to a single product category.
+- **Search by product** — type a product name or SKU in the search bar to jump directly to a specific item.
+- **Sort columns** — click any column header to sort by product name, SKU, category, or quantity.
+
+### Low Stock Alert Report
+
+This report automatically surfaces every product whose stock has dropped to or below its reorder threshold.
+
+<Info>
+  Reorder thresholds are configured per product in **Inventory → Products**. If you have not set a threshold for a product, it will not appear in this report even when stock reaches zero. Visit the [Products page](/inventory/products) to configure thresholds.
+</Info>
+
+The report columns include the product name, current on-hand quantity, reorder threshold, and the shortfall — the number of units needed to return to threshold.
+
+### Inventory Movement Report
+
+Use the movement report to understand how stock changed over any period.
+
+<Steps>
+  <Step title="Open the report">
+    Select **Inventory Movement** from **FacilPOS → Reports → Inventory**.
+  </Step>
+  <Step title="Set the date range">
+    Click the **Date Range** picker and choose a preset or enter a custom start and end date.
+  </Step>
+  <Step title="Filter by movement type (optional)">
+    Use the **Movement Type** filter to show only specific events: **Sales**, **Returns**, or **Manual Adjustments**.
+  </Step>
+  <Step title="Apply and review">
+    Click **Apply**. Each row shows the product, movement type, quantity change, date and time, and the user who triggered the change.
+  </Step>
+</Steps>
+
+### Stock Valuation Report
+
+The stock valuation report calculates the monetary value of your current inventory.
+
+<Tabs>
+  <Tab title="Valuation at Cost Price">
+    Select **Cost Price** from the **Valuation Method** dropdown. FacilPOS multiplies each product's on-hand quantity by its recorded purchase cost to give you the total amount tied up in stock.
+  </Tab>
+  <Tab title="Valuation at Sale Price">
+    Select **Sale Price** to see the potential revenue value of your current inventory. This figure uses the product's active selling price from your current price list.
+  </Tab>
+</Tabs>
+
+## Export Reports
+
+All inventory reports can be exported for use in spreadsheets, accounting tools, or archiving.
+
+<Steps>
+  <Step title="Run the report">
+    Open the report you want to export and apply any filters or date ranges.
+  </Step>
+  <Step title="Choose a format">
+    Click **Export** in the top-right corner and select **CSV** or **PDF**.
+  </Step>
+  <Step title="Download">
+    The file downloads immediately. CSV files contain all data rows; PDF files include a formatted header with your store name and report date.
+  </Step>
+</Steps>
+
+## How Inventory Data Syncs with FacilERP
+
+FacilPOS shares inventory data in real time with the FacilERP purchasing module. When stock levels drop below their reorder thresholds, FacilERP can automatically generate purchase order suggestions for your suppliers — so your buying team is alerted before you run out.
+
+<Info>
+  To enable automatic reorder suggestions, configure your supplier relationships and minimum stock thresholds in **FacilERP → Purchasing → Reorder Rules**. Once set up, suggested purchase orders appear in FacilERP whenever a product in FacilPOS falls below its threshold.
+</Info>
+
+<Tip>
+  Run the **Stock Valuation Report** at the same time each week — for example, every Monday morning — and compare it to the previous week. A steady, unexplained decrease in value is an early indicator of shrinkage, whether from theft, damage, or recording errors.
+</Tip>
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Stock Management" icon="warehouse" href="/inventory/stock-management">
+    Adjust stock levels, record manual stock counts, and manage incoming deliveries.
+  </Card>
+  <Card title="Sales Reports" icon="chart-line" href="/reports/sales-reports">
+    Understand which products are selling fastest and how that ties to your inventory consumption.
+  </Card>
+</CardGroup>

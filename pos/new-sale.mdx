@@ -1,0 +1,78 @@
+---
+title: 'Processing a New Sale in FacilPOS'
+sidebarTitle: 'New Sale'
+description: 'Step-by-step guide to creating, editing, and completing a sale transaction in FacilPOS, from adding products to final payment.'
+---
+
+Processing a sale in FacilPOS is designed to be fast, flexible, and forgiving. You can add products by scanning a barcode, searching by name, or tapping the product grid — and you can edit quantities, swap items, or apply discounts at any point before you charge the customer. This page walks you through the complete flow from opening a new sale to handing over the receipt.
+
+<Note>
+  Your register session must be open before you can process a sale. If you see a prompt asking you to open a session, follow the steps on the [Dashboard](/pos/dashboard) page first.
+</Note>
+
+## Creating and Completing a Sale
+
+<Steps>
+  <Step title="Start a new sale">
+    From the dashboard, click **New Sale** in the top action bar, or simply begin adding items — FacilPOS automatically starts a fresh sale if no active cart is open. The cart panel on the right clears and displays a blank order ready for items.
+  </Step>
+
+  <Step title="Add products">
+    Add items to the cart using any of the three methods below:
+
+    <Tabs>
+      <Tab title="Barcode Scan">
+        Point your barcode scanner at the product. The item appears in the cart instantly with a quantity of 1. Scan the same barcode again to increment the quantity by 1, or adjust it manually after adding.
+      </Tab>
+      <Tab title="Manual Search">
+        Click the search bar at the top of the product panel and type a product name, SKU, or partial description. Select the correct item from the results list to add it to the cart.
+      </Tab>
+      <Tab title="Product Grid">
+        Click any tile in the product grid to add that item with a quantity of 1. The grid displays your configured quick-access products for the fastest possible checkout on high-frequency items.
+      </Tab>
+    </Tabs>
+
+    <Tip>
+      FacilPOS is compatible with most USB and Bluetooth HID barcode scanners. If your scanner is not registering scans, confirm the device is in HID keyboard-emulation mode. See [Hardware Setup](/help/hardware-setup) for a full compatibility list.
+    </Tip>
+  </Step>
+
+  <Step title="Edit quantities and remove items">
+    In the cart, click the quantity number next to any line item to type a new value directly, or use the **+** and **−** buttons for single-unit adjustments. To remove an item entirely, click the trash icon on its row. FacilPOS recalculates the subtotal after every change.
+  </Step>
+
+  <Step title="Apply a discount">
+    You can apply discounts at the individual item level or across the entire order.
+
+    <Tabs>
+      <Tab title="Item-Level Discount">
+        Click the line item in the cart to expand its options, then select **Discount**. Enter a percentage or a fixed amount. The discounted price appears in the cart alongside the original price for transparency.
+      </Tab>
+      <Tab title="Order-Level Discount">
+        Click the **Order Discount** button at the bottom of the cart panel. Enter a percentage or fixed amount to reduce the entire order total. Order-level discounts are applied after item-level discounts are calculated.
+      </Tab>
+    </Tabs>
+
+    For pre-configured discount rules and loyalty rewards, see [Loyalty & Discounts](/customers/loyalty-discounts).
+  </Step>
+
+  <Step title="Select or create a customer (optional)">
+    Click **Add Customer** above the cart total to attach a customer record to the sale. Search by name, phone number, or email address. If the customer is new, click **Create Customer** to add their details on the spot without leaving the sale screen.
+
+    Attaching a customer is optional but enables loyalty point tracking, order history, and pre-filled receipt delivery. You can also skip this step and add the customer after payment if needed.
+  </Step>
+
+  <Step title="Proceed to payment">
+    When the cart is complete, click the **Charge** button at the bottom of the cart panel. The button displays the final order total. Clicking it opens the payment screen where you select the payment method and confirm the transaction. See [Accepting Payments](/pos/payments) for a full walkthrough.
+  </Step>
+</Steps>
+
+## After the Sale
+
+Once payment is confirmed, FacilPOS performs three actions automatically:
+
+- **Receipt prompt** — A dialog appears offering to print a paper receipt, send a digital receipt by email, or skip. See [Receipts](/pos/receipts) for full options.
+- **Stock updated** — Inventory levels for all sold items are decremented immediately in FacilERP, keeping your stock counts accurate in real time.
+- **ERP sync** — The completed transaction is posted to the FacilERP accounting module, updating revenue records, tax summaries, and daily sales totals without any manual entry.
+
+The dashboard returns to a blank cart, ready for the next sale.

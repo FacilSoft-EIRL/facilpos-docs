@@ -1,0 +1,160 @@
+---
+title: 'Managing Users and Roles in FacilPOS'
+sidebarTitle: 'Users & Roles'
+description: 'Create user accounts, assign roles, and control what each team member can access and do in FacilPOS, from cashiers to managers.'
+---
+
+Access control in FacilPOS ensures that every team member can do exactly what their role requires — and nothing more. By assigning roles to each user, you protect sensitive operations like refunds and configuration changes while keeping the checkout experience fast and simple for frontline staff.
+
+## Built-in Roles
+
+FacilPOS ships with three built-in roles. Each role is additive — higher roles include all permissions from the roles below them.
+
+<CardGroup cols={2}>
+  <Card title="Cashier" icon="cash-register" href="/configuration/users-permissions">
+    The default role for frontline staff. Cashiers can:
+    - Open and close their own session
+    - Process sales and accept payments
+    - Apply standard discounts
+    - Issue receipts (print and email)
+    - Look up product prices and stock levels
+  </Card>
+  <Card title="Supervisor" icon="user-check" href="/configuration/users-permissions">
+    Designed for team leads and shift supervisors. Supervisors can do everything a Cashier can, plus:
+    - Apply large or custom discounts (above the cashier threshold)
+    - Process returns and refunds
+    - View daily sales and cash register reports
+    - Override a declined payment
+  </Card>
+</CardGroup>
+
+<Card title="Manager / Admin" icon="shield-halved" href="/configuration/users-permissions">
+  Full access to FacilPOS. Managers can do everything a Supervisor can, plus:
+  - Access all configuration settings (store setup, payment methods, integrations)
+  - Create, edit, and deactivate user accounts
+  - View all reports across all registers and date ranges
+  - Manage products, categories, and price lists
+  - Trigger and review ERP sync operations
+</Card>
+
+---
+
+## Creating a New User
+
+<Steps>
+  <Step title="Navigate to User Management">
+    Go to **FacilPOS → Configuration → Users & Permissions** and click **Add User**.
+  </Step>
+  <Step title="Enter Personal Details">
+    Fill in the following fields:
+
+    <ParamField body="Full Name" type="string" required>
+      The user's display name, shown in the audit log and on receipts if the cashier name field is enabled.
+    </ParamField>
+
+    <ParamField body="Username" type="string" required>
+      A unique login handle. Lowercase letters, numbers, and underscores only. Cannot be changed after creation.
+    </ParamField>
+
+    <ParamField body="Email Address" type="string" required>
+      Used for password reset and FacilERP notifications. Must be unique across the system.
+    </ParamField>
+  </Step>
+  <Step title="Assign a Role">
+    Select the appropriate role from the **Role** dropdown: **Cashier**, **Supervisor**, or **Manager/Admin**.
+  </Step>
+  <Step title="Set a PIN">
+    Enter a 4–6 digit PIN in the **Quick-Login PIN** field. The PIN is used for fast cashier switching at the register without requiring a full password entry.
+
+    <Note>
+      PINs must be unique across all active users. FacilPOS will alert you if the PIN is already taken.
+    </Note>
+  </Step>
+  <Step title="Save the User">
+    Click **Create User**. The new account is immediately active. The user will receive an email invitation to set their full password.
+  </Step>
+</Steps>
+
+---
+
+## Editing and Deactivating Users
+
+To update a user's name, email, role, or PIN, click the user's row in the user list and select **Edit**. All changes take effect immediately.
+
+To remove access for a departing team member, click **Deactivate** rather than deleting the account. Deactivated users cannot log in, but their transaction history and audit log entries are preserved for reporting purposes.
+
+<Tabs>
+  <Tab title="Edit a User">
+    <Steps>
+      <Step title="Find the User">
+        Go to **Configuration → Users & Permissions** and use the search bar to locate the user.
+      </Step>
+      <Step title="Open the Edit Panel">
+        Click the user's row and select **Edit User**.
+      </Step>
+      <Step title="Make Changes">
+        Update the relevant fields. You can change the role, email, display name, and PIN. The username cannot be changed.
+      </Step>
+      <Step title="Save">
+        Click **Save Changes**. The updated permissions apply on the user's next action.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Deactivate a User">
+    <Steps>
+      <Step title="Find the User">
+        Locate the user in **Configuration → Users & Permissions**.
+      </Step>
+      <Step title="Deactivate">
+        Click the user's row, select **Deactivate**, and confirm the prompt. The user's status changes to **Inactive** and they are immediately signed out of any active session.
+      </Step>
+      <Step title="Reactivate if Needed">
+        To restore access, find the user in the **Inactive** tab, click their row, and select **Reactivate**.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+---
+
+## PIN Login for Cashiers
+
+PIN login allows cashiers to switch quickly between operators at a shared register without signing out and back in through the full login screen.
+
+When a cashier finishes their turn at the register, they tap **Switch Cashier** on the POS screen. The next cashier enters their PIN and the session transfers to their account instantly. All subsequent sales are recorded under the new cashier's name.
+
+<Tip>
+  Encourage cashiers to switch rather than walk away from an open session. This keeps your audit log accurate and prevents one cashier's sales from being attributed to another.
+</Tip>
+
+---
+
+## Audit Log
+
+Every action taken in FacilPOS — sales, refunds, discounts, configuration changes, logins — is recorded in the audit log with the user's name, timestamp, and a description of the action.
+
+To review the audit log, go to **Configuration → Users & Permissions → Audit Log**. Use the date range and user filters to narrow results. The log is read-only and cannot be edited or deleted.
+
+<Info>
+  The audit log retains records for 12 months by default. Contact your FacilERP administrator to adjust the retention period.
+</Info>
+
+---
+
+## Sync with FacilERP
+
+<Note>
+  User accounts in FacilPOS are linked directly to FacilERP user accounts. Creating or editing a user in FacilPOS updates the corresponding FacilERP record, and vice versa. You do not need to manage users in two places.
+</Note>
+
+<Warning>
+  Only users with the **Manager/Admin** role can create, edit, or deactivate user accounts. Supervisors and Cashiers do not have access to the Users & Permissions section.
+</Warning>
+
+---
+
+## Related Settings
+
+<Card title="Store Setup" icon="store" href="/configuration/store-setup">
+  Configure your store name, currency, tax rates, and receipt settings before adding your team.
+</Card>

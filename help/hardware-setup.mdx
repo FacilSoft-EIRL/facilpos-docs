@@ -1,0 +1,140 @@
+---
+title: 'Setting Up Hardware for FacilPOS'
+sidebarTitle: 'Hardware Setup'
+description: 'Connect and configure barcode scanners, receipt printers, cash drawers, and payment terminals for use with FacilPOS.'
+---
+
+FacilPOS works with a range of standard point-of-sale hardware, including barcode scanners, receipt printers, cash drawers, and card payment terminals. Most devices connect through USB, Bluetooth, or your local network and require minimal configuration to get running. This guide covers the setup steps for each supported hardware type so your checkout station is ready for your first sale.
+
+<Warning>
+  Use only hardware that appears on the FacilPOS compatibility list for best results. Unlisted devices may work but are not officially supported, and FacilSoft cannot guarantee correct operation.
+</Warning>
+
+## Barcode Scanner
+
+Barcode scanners let cashiers scan product barcodes instead of searching or typing product names, dramatically speeding up checkout.
+
+**Compatible scanner types:**
+- **USB HID** (Human Interface Device) — the most common type; recognised by the operating system as a keyboard
+- **Bluetooth** — pairs with the POS device wirelessly; useful for counter-free setups
+
+<Steps>
+  <Step title="Connect the scanner">
+    Plug a USB HID scanner directly into a USB port on your POS device. No driver installation is required — the operating system recognises it as a keyboard automatically. For a Bluetooth scanner, pair it through your operating system's Bluetooth settings before proceeding.
+  </Step>
+  <Step title="Test the scanner in FacilPOS">
+    Open a new sale in **POS → New Sale** and scan any product barcode. If the product appears in the cart, the scanner is working correctly. If nothing happens, click inside the search field first to ensure it has focus before scanning.
+  </Step>
+</Steps>
+
+<Tip>
+  If your USB scanner is not recognised, check that it is configured for **HID keyboard emulation mode**. Refer to the scanner's manual for the programming barcode that enables this mode.
+</Tip>
+
+---
+
+## Receipt Printer
+
+Receipt printers produce printed proof-of-purchase for customers and end-of-shift reports for your team.
+
+**Supported connection types:** USB, Network (Ethernet or Wi-Fi), Bluetooth
+
+### Install printer drivers
+
+<Tabs>
+  <Tab title="Windows">
+    1. Download the driver package from your printer manufacturer's website (e.g., Epson, Star Micronics, Bixolon).
+    2. Run the installer and follow the on-screen prompts.
+    3. Once installed, open **Control Panel → Devices and Printers** and confirm the printer appears in the list.
+    4. Right-click the printer and select **Set as default printer**.
+  </Tab>
+  <Tab title="macOS">
+    1. Download the macOS driver package from your printer manufacturer's website.
+    2. Open the `.pkg` file and follow the installation prompts.
+    3. Go to **System Settings → Printers & Scanners** and click **+** to add the printer.
+    4. Select the printer from the list and confirm the correct driver is selected.
+  </Tab>
+</Tabs>
+
+### Configure the printer in FacilPOS
+
+<Steps>
+  <Step title="Open Store Setup">
+    Go to **Configuration → Store Setup** and scroll to the **Receipt Printer** section.
+  </Step>
+  <Step title="Select your printer">
+    Choose your printer from the **Printer** dropdown. For network printers, enter the printer's IP address in the **Network Address** field.
+  </Step>
+  <Step title="Set paper width">
+    Select **80 mm** from the **Paper Width** dropdown. This matches standard 80 mm thermal rolls used in most POS printers.
+  </Step>
+  <Step title="Save and test">
+    Click **Save**, then click **Test Print**. A test receipt should print immediately. If it does not, verify the connection and driver, then try again.
+  </Step>
+</Steps>
+
+<Tip>
+  Use **80 mm thermal paper** rolls for standard receipts. Thermal paper requires no ink and produces clean, fast printouts — avoid paper with a glossy or waxy coating, as it does not print well with thermal heads.
+</Tip>
+
+---
+
+## Cash Drawer
+
+Cash drawers open automatically on cash payments and can also be opened manually by authorised staff.
+
+**Supported connection methods:**
+- **Via receipt printer** — most cash drawers connect to the receipt printer using an RJ-11 (telephone-style) cable; the printer triggers the drawer open signal
+- **USB** — some drawers connect directly to the POS device via USB
+
+### Configure auto-open on cash payment
+
+<Steps>
+  <Step title="Open Store Setup">
+    Go to **Configuration → Store Setup** and find the **Cash Drawer** section.
+  </Step>
+  <Step title="Enable auto-open">
+    Toggle **Auto-Open Drawer on Cash Payment** to on. If your drawer is connected via a receipt printer, select the correct printer from the **Connected Via** dropdown.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The drawer will now open automatically whenever a cash payment is completed.
+  </Step>
+</Steps>
+
+### Open the drawer manually
+
+Authorised users can open the cash drawer at any time from **POS → Dashboard** by clicking the **Open Cash Drawer** button. This action is logged in the session audit trail.
+
+---
+
+## Payment Terminal
+
+Payment terminals handle card and contactless payments. FacilPOS communicates with the terminal over your local network or a serial connection.
+
+**Supported connection types:** IP (network) and serial
+
+### Pair the terminal with FacilPOS
+
+<Steps>
+  <Step title="Prepare the terminal">
+    Power on the terminal and ensure it is connected to the same local network as your POS device. Note the terminal's **IP address** from its network settings menu, or from your router's device list.
+  </Step>
+  <Step title="Open Payment Methods configuration">
+    In FacilPOS, go to **Configuration → Payment Methods → Card Terminal**.
+  </Step>
+  <Step title="Enter connection details">
+    Select **IP** as the connection type, then enter the terminal's IP address and port number. If using a serial connection, select **Serial** and choose the correct COM port.
+  </Step>
+  <Step title="Pair the terminal">
+    Click **Pair Terminal**. FacilPOS will send a handshake request to the terminal. Approve the pairing on the terminal's screen if prompted.
+  </Step>
+  <Step title="Run a test transaction">
+    Click **Test Transaction** to send a £0.00 authorisation request. Confirm the terminal responds with an approval message. Your terminal is now ready to process payments.
+  </Step>
+</Steps>
+
+<Note>
+  If your terminal's IP address changes (e.g., after a router restart), you will need to update it in the Payment Methods configuration and re-pair. Assign a static IP or a DHCP reservation for the terminal to prevent this.
+</Note>
+
+For payment terminal troubleshooting, see [Common Issues](/help/common-issues). For payment method configuration, see [Payment Methods](/configuration/payment-methods).

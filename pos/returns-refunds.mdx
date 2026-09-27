@@ -1,0 +1,80 @@
+---
+title: 'Processing Returns and Refunds in FacilPOS'
+sidebarTitle: 'Returns & Refunds'
+description: 'Handle product returns, issue refunds to the original payment method or store credit, and restock inventory automatically in FacilPOS.'
+---
+
+FacilPOS makes it straightforward to handle returns whether the customer has their original receipt or not. When you process a return, FacilPOS refunds the appropriate amount, restocks the returned items in inventory, and syncs the adjustment back to FacilERP's accounting module — all without any manual bookkeeping. Partial returns, where the customer keeps some items and returns others, are fully supported.
+
+<Note>
+  Partial returns are supported. When a customer returns only some items from an order, you select just those items from the original transaction and FacilPOS calculates the refund amount for that subset only.
+</Note>
+
+## Return With Original Receipt
+
+This is the fastest and most accurate return flow because FacilPOS retrieves all transaction details automatically.
+
+<Steps>
+  <Step title="Open the Returns screen">
+    From the dashboard, click **Returns** in the top action bar or navigate to **Sale History** and locate the original transaction. Click **Return Items** on the transaction detail view.
+  </Step>
+  <Step title="Look up the transaction">
+    On the Returns screen, scan the receipt barcode, enter the transaction ID printed on the receipt, or search by customer name and date. FacilPOS loads the full list of items from the original sale.
+  </Step>
+  <Step title="Select the items to return">
+    Check the box next to each item the customer is returning. For items where the customer is returning fewer units than originally purchased, adjust the return quantity in the field provided. FacilPOS updates the refund total in real time as you make selections.
+  </Step>
+  <Step title="Choose the refund method">
+    Select how the refund should be issued from the options below, then click **Process Refund** to complete the return.
+
+    <Tabs>
+      <Tab title="Original Payment Method">
+        Refunds the amount to the same method used in the original transaction (cash returned from drawer, card refunded to the terminal). This is the default option and is recommended whenever possible.
+      </Tab>
+      <Tab title="Store Credit">
+        Issues the refund as store credit linked to the customer's account. The credit is available immediately for use on future purchases. A customer record must be attached to apply store credit.
+      </Tab>
+      <Tab title="Cash">
+        Issues the refund in cash from the register drawer regardless of the original payment method. This option may require supervisor approval depending on your store's configuration in [Users & Permissions](/configuration/users-permissions).
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Return Without a Receipt
+
+When a customer cannot provide a receipt, you can still process the return through manual entry. Depending on your store policy, this flow may require supervisor approval before the refund is issued.
+
+<Steps>
+  <Step title="Start a no-receipt return">
+    From the Returns screen, click **Return Without Receipt**. FacilPOS opens a manual entry form.
+  </Step>
+  <Step title="Add the returned items manually">
+    Search for each product by name or SKU and enter the quantity being returned. Because there is no original transaction to reference, you must set the return price for each item — FacilPOS pre-fills the current selling price as a default.
+  </Step>
+  <Step title="Supervisor approval (if required)">
+    If your store configuration requires supervisor sign-off for no-receipt returns, FacilPOS prompts for a supervisor PIN or login before continuing. Configure this requirement in [Users & Permissions](/configuration/users-permissions).
+  </Step>
+  <Step title="Choose the refund method and confirm">
+    Select the refund method — store credit is commonly used for no-receipt returns — and click **Process Refund**.
+  </Step>
+</Steps>
+
+## What Happens After a Return
+
+Once a return is confirmed, FacilPOS automatically handles the following:
+
+<CardGroup cols={2}>
+  <Card title="Inventory Restocked" icon="boxes-stacking" href="/inventory/stock-management">
+    Returned items are added back to your stock count immediately. The inventory update is visible in the stock management screen right away.
+  </Card>
+  <Card title="ERP Sync" icon="arrows-rotate" href="/reports/sales-reports">
+    The refund is posted to FacilERP's accounting module, adjusting revenue totals, tax liabilities, and daily sales summaries without manual entry.
+  </Card>
+</CardGroup>
+
+<Warning>
+  Refunds to a credit or debit card are processed through your payment terminal but may take **3–5 business days** to appear on the customer's bank statement, depending on their card issuer. Inform the customer of this delay at the time of the return. Cash and store credit refunds are available immediately.
+</Warning>
+
+For questions about permission levels for return approvals, see [Users & Permissions](/configuration/users-permissions). To review a history of all processed returns, open the [Sales Reports](/reports/sales-reports) page and filter by transaction type.

@@ -1,0 +1,110 @@
+---
+title: 'Cash Register Sessions and Closing Reports'
+sidebarTitle: 'Cash Register'
+description: 'Open and close register sessions, count cash, reconcile takings, and review Z-report summaries at the end of every shift in FacilPOS.'
+---
+
+Register sessions in FacilPOS give you a structured way to track all cash movements from the moment you open your drawer in the morning to the moment you close it at the end of a shift. Every session captures your opening float, all sales and refunds processed, any manual cash entries, and a final counted amount — producing a complete Z-report you can use for daily accounting reconciliation.
+
+## Opening a Session
+
+Before you can process any sales, you must open a register session. This records your starting cash drawer balance and links all subsequent transactions to that session.
+
+<Steps>
+  <Step title="Go to the Dashboard">
+    Open **FacilPOS** and navigate to the **Dashboard**. If no session is currently active, you will see an **Open Session** banner at the top of the screen.
+  </Step>
+  <Step title="Click Open Session">
+    Click the **Open Session** button. A dialog box appears prompting you to enter your opening float.
+  </Step>
+  <Step title="Enter the opening float">
+    Count the cash in your drawer and enter the exact amount in the **Opening Float** field. This figure becomes the baseline for your end-of-session reconciliation.
+  </Step>
+  <Step title="Confirm">
+    Click **Start Session**. FacilPOS records the opening timestamp and float amount, and you are ready to process sales.
+  </Step>
+</Steps>
+
+<Warning>
+  Always close the previous session before opening a new one. Starting a new session without closing the prior one will mix transaction records from different shifts, making reconciliation unreliable.
+</Warning>
+
+## During a Session
+
+While a session is active, you can process sales normally and record any additional cash movements that affect the drawer balance.
+
+### Adding a Cash-In or Cash-Out Entry
+
+Use cash-in and cash-out entries to record money that enters or leaves the drawer outside of a regular sale — for example, a petty cash withdrawal or a float top-up from the safe.
+
+<Steps>
+  <Step title="Open the session panel">
+    From the Dashboard or the active sale screen, click the **Session** icon in the top navigation bar.
+  </Step>
+  <Step title="Select the movement type">
+    Click **Cash In** to record money added to the drawer, or **Cash Out** to record money removed.
+  </Step>
+  <Step title="Enter the amount and reason">
+    Enter the amount and a brief description (for example, *Petty cash — office supplies* or *Float top-up from safe*). Click **Confirm** to save the entry.
+  </Step>
+</Steps>
+
+### Viewing the Running Session Total
+
+To check your current session balance at any point, click **Session → View Summary**. FacilPOS displays:
+
+- **Opening float** — the amount entered when the session started
+- **Total sales** — sum of all completed transactions in this session
+- **Cash in / Cash out** — total manual entries recorded
+- **Expected cash in drawer** — calculated balance based on the above
+
+## Closing a Session
+
+At the end of each shift, close the register session to finalize the day's records and generate the Z-report.
+
+<Steps>
+  <Step title="Click Close Session">
+    From the Dashboard, click **Session → Close Session**. FacilPOS displays the expected cash drawer balance based on your opening float, sales, refunds, and manual entries.
+  </Step>
+  <Step title="Count the cash drawer">
+    Physically count all cash in the drawer. Enter the total in the **Counted Amount** field.
+  </Step>
+  <Step title="Review the discrepancy">
+    FacilPOS automatically calculates the difference between the expected balance and your counted amount. A positive figure means you have more cash than expected (overage); a negative figure means a shortage.
+  </Step>
+  <Step title="Save and generate the Z-report">
+    Click **Close Session**. FacilPOS finalizes the session and generates the Z-report. You can print it immediately or access it later from **Reports → Cash Register**.
+  </Step>
+</Steps>
+
+## Z-Report Contents
+
+The Z-report is the end-of-session summary document. It includes:
+
+<Accordion title="Total Sales by Payment Method">
+  A breakdown of revenue collected by each payment type — cash, card, mobile wallet, and any other configured methods — so you can reconcile each tender separately.
+</Accordion>
+
+<Accordion title="Refunds">
+  The total value and number of refunds processed during the session, shown separately from sales so your gross and net revenue are both visible.
+</Accordion>
+
+<Accordion title="Cash Movements">
+  A log of every cash-in and cash-out entry recorded during the session, including the description and timestamp for each.
+</Accordion>
+
+<Accordion title="Discrepancy">
+  The difference between the system-calculated expected cash balance and the amount you physically counted. A zero discrepancy confirms a clean close.
+</Accordion>
+
+<Tip>
+  Print or save the Z-report at the end of every shift and file it with your daily accounting records. Having a paper or digital copy for each session makes audits straightforward and gives your accountant a clear trail for reconciliation.
+</Tip>
+
+## Related Reports
+
+<CardGroup cols={2}>
+  <Card title="Sales Reports" icon="chart-line" href="/reports/sales-reports">
+    Analyze revenue, top products, and team performance across daily, weekly, and monthly periods.
+  </Card>
+</CardGroup>
