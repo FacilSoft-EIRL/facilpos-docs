@@ -11,71 +11,38 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Guía de uso",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Primeros pasos",
             "pages": [
-              "introduction",
-              "quickstart",
-              "key-concepts"
+              "primeros-pasos/ingreso"
             ]
           },
           {
-            "group": "Point of Sale",
-            "pages": [
-              "pos/dashboard",
-              "pos/new-sale",
-              "pos/payments",
-              "pos/receipts",
-              "pos/returns-refunds"
-            ]
+            "group": "Comprobantes",
+            "pages": []
           },
           {
-            "group": "Products & Inventory",
-            "pages": [
-              "inventory/products",
-              "inventory/categories",
-              "inventory/stock-management",
-              "inventory/price-lists"
-            ]
+            "group": "Mantenimiento",
+            "pages": []
           },
           {
-            "group": "Customers",
-            "pages": [
-              "customers/customer-management",
-              "customers/loyalty-discounts"
-            ]
+            "group": "Reportes",
+            "pages": []
           },
           {
-            "group": "Reports & Analytics",
-            "pages": [
-              "reports/sales-reports",
-              "reports/cash-register",
-              "reports/inventory-reports"
-            ]
-          },
-          {
-            "group": "Configuration",
-            "pages": [
-              "configuration/store-setup",
-              "configuration/users-permissions",
-              "configuration/payment-methods",
-              "configuration/integrations"
-            ]
+            "group": "Configuración",
+            "pages": []
           }
         ]
       },
       {
-        "tab": "Help & FAQ",
+        "tab": "Ayuda",
         "groups": [
           {
-            "group": "Troubleshooting",
-            "pages": [
-              "help/common-issues",
-              "help/hardware-setup",
-              "help/faqs"
-            ]
+            "group": "Ayuda",
+            "pages": []
           }
         ]
       }
