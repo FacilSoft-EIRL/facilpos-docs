@@ -1,0 +1,164 @@
+---
+title: "Cómo registrar una venta"
+sidebarTitle: "Registrar una venta"
+description: "Emita una factura, boleta, ticket o nota de pedido desde FacilPOS en ocho pasos."
+icon: "cart-shopping"
+---
+
+Una venta se registra desde **Comprobantes → Ventas** en tres partes: agregar los ítems, seleccionar el cliente y elegir la forma de pago. El comprobante se emite recién al presionar **Registrar** al final del formulario.
+
+## Antes de empezar
+
+Ingrese a [pos.facilerp.com](https://pos.facilerp.com) y verifique en la pantalla de **Inicio** que el **Punto de venta** sea el correcto (por ejemplo, LIMA). La serie del comprobante depende de este punto de venta. Vea [Ingreso e Inicio](/primeros-pasos/ingreso).
+
+Tenga a mano el RUC o DNI del cliente y el código o nombre de los productos.
+
+## Pasos para registrar una venta
+
+<Info>
+  Las capturas corresponden a un ejemplo real: la **Nota de Pedido 1018-2** a FACILSOFT E.I.R.L. (RUC 20601863228) por S/ 100.00.
+</Info>
+
+<Steps>
+  <Step title="Abra el formulario de venta">
+    Toque el menú (≡) y elija **Comprobantes → Ventas**. También puede usar **Registrar Venta → Ver** en la pantalla de Inicio. Se abre la pantalla **Comprobante de venta**.
+
+    <Frame>
+      <img src="/images/comprobantes/venta/menu.jpg" alt="Menú: Comprobantes → Ventas" />
+    </Frame>
+  </Step>
+
+  <Step title="Complete la cabecera">
+    - **Tipo de comprobante:** Boleta de Venta, Factura, Nota de Pedido o Ticket. Use Factura si el cliente tiene RUC y Boleta para personas con DNI.
+    - **Numeración:** se asigna sola según el tipo y el punto de venta (por ejemplo, F006-1 para Factura o 1018-2 para Nota de Pedido). No se edita.
+    - **Fecha de emisión:** por defecto, la fecha de hoy.
+    - **Moneda:** Soles o Dólares. El **Tipo de cambio** del día se muestra como referencia.
+
+    <Note>
+      La **Nota de Pedido** es un documento interno: se guarda en el sistema pero no se registra en contabilidad.
+    </Note>
+
+    <Frame>
+      <img src="/images/comprobantes/venta/cabecera.jpg" alt="Tipo de comprobante: Nota de Pedido" />
+    </Frame>
+  </Step>
+
+  <Step title="Agregue los ítems">
+    En la sección **Items**, presione **+ Añadir Item**. Se abre la lista de productos con su precio y stock.
+
+    - Busque el producto escribiendo en **Valor**. Con **Filtrar por** elija si busca por **Nombre** o por **Código**. La lista se filtra mientras escribe.
+    - El interruptor **Existencias (Con stock disponible)** muestra solo productos con stock. Desactívelo para ver todo el catálogo.
+
+    <Frame>
+      <img src="/images/comprobantes/venta/buscar-item.jpg" alt="Búsqueda del producto y botón +" />
+    </Frame>
+
+    El ícono de documento abre el detalle del producto: **Stocks** por almacén (ALMACEN, LIMA, R.M.A., TACNA), **Precios** e **Imágenes**.
+
+    <Frame>
+      <img src="/images/comprobantes/venta/detalle-item.jpg" alt="Stock del producto por almacén" />
+    </Frame>
+
+    Presione **+** junto al producto y complete **Cantidad**, **Unidad de Medida**, **Precio** y **Descuento (%)**. Deje activado **Aplicar Impuestos** si el ítem está afecto a IGV. Luego presione **Registrar** en esa ventana.
+
+    <Frame>
+      <img src="/images/comprobantes/venta/anadir-item.jpg" alt="Precio, descuento y botón Registrar del ítem" />
+    </Frame>
+
+    <Tip>
+      **Registrar** en esta ventana solo agrega el ítem a la venta; todavía no emite nada. Puede seguir agregando productos o cerrar la lista con la **X**.
+    </Tip>
+  </Step>
+
+  <Step title="Revise los ítems y totales">
+    Cada ítem aparece con su cantidad y precio. Use el lápiz para editarlo o el tacho para quitarlo. Debajo verá **Precio de Venta**, **Descuento Global (%)**, **Subtotal**, **Impuestos (IGV)** y **Total**. El precio ingresado incluye IGV: un ítem de S/ 100.00 da Subtotal S/ 84.75 e IGV S/ 15.25.
+
+    <Frame>
+      <img src="/images/comprobantes/venta/items-totales.jpg" alt="Ítem agregado y total" />
+    </Frame>
+  </Step>
+
+  <Step title="Seleccione el cliente">
+    En la sección **Cliente**, presione **Seleccionar Cliente**. Busque en **Valor** por **Nombre** o **Número de Documento**; la lista se filtra mientras escribe.
+
+    - **Cliente existente:** presione **+** junto al cliente. Se abre **Datos de Facturación** con Nro. documento, Razón social, Dirección, Email, Teléfono y Contacto. Revise los datos y presione **Registrar**.
+    - **Cliente nuevo:** si la búsqueda muestra "No data available", presione **+ Nuevo**.
+
+    <Frame>
+      <img src="/images/comprobantes/venta/buscar-cliente.jpg" alt="Búsqueda del cliente por documento y botón Nuevo" />
+    </Frame>
+
+    <Accordion title="Crear un cliente nuevo">
+      En **Agregar cliente**, pestaña **Ficha**: elija el **Tipo de documento** (DNI, RUC, CE, Pasaporte o Doc.trib.no.dom.sin.ruc), escriba el **Número** y presione la **lupa**. El sistema completa el **Nombre / Razón social**. Email y Teléfono son opcionales.
+
+      <Frame>
+        <img src="/images/comprobantes/venta/nuevo-cliente-ficha.jpg" alt="Tipo de documento, número y razón social" />
+      </Frame>
+
+      En la pestaña **Dirección**, la lupa también completa Dirección, Departamento, Provincia, Distrito y Ubigeo. Revíselos y presione **Registrar**.
+
+      <Frame>
+        <img src="/images/comprobantes/venta/nuevo-cliente-direccion.jpg" alt="Dirección completada y botón Registrar" />
+      </Frame>
+    </Accordion>
+
+    Al terminar, el cliente queda asignado a la venta, con los botones **Editar** y **Eliminar** para cambiarlo.
+
+    <Frame>
+      <img src="/images/comprobantes/venta/cliente-asignado.jpg" alt="Cliente asignado a la venta" />
+    </Frame>
+  </Step>
+
+  <Step title="Elija la forma de pago">
+    En **Pago → Forma de pago** elija CONTADO, DEPÓSITO/TRANSFERENCIA, SIN PAGO o TARJETA.
+  </Step>
+
+  <Step title="Revise los datos adicionales">
+    **Vendedor** se carga con el usuario actual y **Lista de precios** viene en Normales. En la Nota de Pedido aparece además el interruptor **Incluye delivery**.
+  </Step>
+
+  <Step title="Registre el documento">
+    Revise todo y presione **Registrar** al final de la página.
+
+    <Frame>
+      <img src="/images/comprobantes/venta/datos-adicionales.jpg" alt="Botón Registrar al final del formulario" />
+    </Frame>
+
+    <Warning>
+      Para Factura, Boleta o Ticket, este paso emite el comprobante y ya no se puede deshacer desde este formulario.
+    </Warning>
+
+    Al terminar aparece **Documento de Venta registrado!** con la Fecha, el Tipo, la Serie y el Número. Use **Descargar** para obtener el documento y **Continuar** para empezar una venta nueva.
+
+    <Frame>
+      <img src="/images/comprobantes/venta/registrado.jpg" alt="Confirmación con tipo, serie y número" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Después de la venta
+
+Busque el comprobante en [Consultas](/comprobantes/consultas) para ver su detalle o descargarlo. Los reportes de ventas están en [Reportes → Ventas](/reportes/ventas).
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title='Al agregar un ítem aparece "Este campo es requerido"'>
+    Complete Precio y Descuento (%); si no hay descuento, escriba 0.
+  </Accordion>
+  <Accordion title="No encuentro un producto">
+    Desactive **Existencias (Con stock disponible)** o cambie **Filtrar por** a Código.
+  </Accordion>
+  <Accordion title="El precio aparece en S/ 0.00">
+    El producto no tiene precio en la lista elegida; ingréselo a mano en el ítem.
+  </Accordion>
+  <Accordion title='La búsqueda de clientes dice "No data available"'>
+    Revise el texto o cambie el filtro a Número de Documento. Si no existe, créelo con **+ Nuevo**.
+  </Accordion>
+  <Accordion title='La ventana "Agregar cliente" no se cierra'>
+    Problema conocido: Cancelar y la X no la cierran. Termine de registrar el cliente o recargue la página (se pierde lo avanzado de la venta).
+  </Accordion>
+  <Accordion title="Después de Continuar, el Tipo de comprobante aparece vacío">
+    Vuelva a elegir el tipo antes de agregar ítems; la numeración se actualiza al elegirlo.
+  </Accordion>
+</AccordionGroup>

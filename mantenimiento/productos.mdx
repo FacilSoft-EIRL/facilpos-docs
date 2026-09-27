@@ -1,0 +1,58 @@
+---
+title: "Productos (variedades)"
+sidebarTitle: "Productos (variedades)"
+description: "Registre productos y servicios con su código, línea, unidad de medida, impuestos, precios y stock por almacén."
+icon: "box"
+---
+
+En FacilPOS los productos y servicios se llaman **variedades**. Se administran en **Mantenimiento → Variedades de productos**.
+
+## Buscar un producto
+
+La lista muestra el código, el nombre, el precio y el stock de cada variedad. Busque con **Valor** y **Filtrar por**, y elija la **lista de precios** que quiere ver (por ejemplo, Normales).
+
+## Registrar un producto
+
+Presione **+ Nuevo**. El formulario **Registrar producto** tiene cinco pestañas.
+
+<Tabs>
+  <Tab title="Ficha">
+    - **Codigo principal (SKU)**: el código con el que busca el producto al vender.
+    - **Número de parte** (opcional).
+    - **Nombre** y **Nombre abreviado**.
+    - **Linea de producto**: vea [Líneas de productos](/mantenimiento/lineas-de-productos).
+    - **Unidad de medida**: vea [Unidades de medida](/mantenimiento/unidades-de-medida).
+    - **Control de stock** y **Control de número de serie**.
+    - Impuestos: **Impuesto General a las Ventas**, **Impuesto a la Venta de Arroz Pilado**, **Impuesto Sobre el Consumo** y **Percepciones**.
+
+    <Frame>
+      <img src="/images/mantenimiento/producto-ficha.jpg" alt="Pestaña Ficha del formulario Registrar producto" />
+    </Frame>
+
+    <Warning>
+      Active **Impuesto General a las Ventas** si el producto está afecto a IGV. En un producto nuevo viene desactivado.
+    </Warning>
+  </Tab>
+  <Tab title="Precios">
+    Elija la **Moneda** y escriba el precio del producto en cada lista de precios (por ejemplo, Normales).
+  </Tab>
+  <Tab title="Inventario">
+    Muestra cada almacén (ALMACEN, LIMA, R.M.A., TACNA) con su **Stock** y si el producto está **Activo** en ese almacén.
+  </Tab>
+  <Tab title="Atributos">
+    Con **Agregar** asigne atributos como Marca, Categoría o Sub-Categoría. Vea [Atributos](/mantenimiento/atributos).
+  </Tab>
+  <Tab title="Datos Adicionales">
+    - **Stock minimo**: se usa en el reporte de [ítems con stock mínimo](/reportes/inventario).
+    - **Peso (KG)** y **Volumen (MT3)**.
+    - **Garantia** y **Periodo** (por ejemplo, AÑOS).
+    - **Enlace web**.
+    - **Sincronización Web → Sitio Internet**: indica si el producto se sincroniza con su sitio web.
+
+    <Frame>
+      <img src="/images/mantenimiento/producto-datos-adicionales.jpg" alt="Pestaña Datos Adicionales del producto" />
+    </Frame>
+  </Tab>
+</Tabs>
+
+Cuando termine, presione **Registrar**.

@@ -21,19 +21,38 @@
           },
           {
             "group": "Comprobantes",
-            "pages": []
+            "pages": [
+              "comprobantes/registrar-venta",
+              "comprobantes/consultas",
+              "comprobantes/cotizaciones",
+              "comprobantes/autorizaciones"
+            ]
           },
           {
             "group": "Mantenimiento",
-            "pages": []
+            "pages": [
+              "mantenimiento/lineas-de-productos",
+              "mantenimiento/clientes",
+              "mantenimiento/proveedores",
+              "mantenimiento/productos",
+              "mantenimiento/atributos",
+              "mantenimiento/unidades-de-medida",
+              "mantenimiento/usuarios"
+            ]
           },
           {
             "group": "Reportes",
-            "pages": []
+            "pages": [
+              "reportes/ventas",
+              "reportes/finanzas",
+              "reportes/inventario"
+            ]
           },
           {
             "group": "Configuración",
-            "pages": []
+            "pages": [
+              "configuracion/ajustes"
+            ]
           }
         ]
       },
@@ -42,7 +61,9 @@
         "groups": [
           {
             "group": "Ayuda",
-            "pages": []
+            "pages": [
+              "ayuda/preguntas-frecuentes"
+            ]
           }
         ]
       }
