@@ -9,28 +9,41 @@ Una venta se registra desde **Comprobantes → Ventas** en tres partes: agregar 
 
 ## Antes de empezar
 
-Ingrese a [pos.facilerp.com](https://pos.facilerp.com) y verifique en la pantalla de **Inicio** que el **Punto de venta** sea el correcto (por ejemplo, LIMA). La serie del comprobante depende de este punto de venta. Vea [Ingreso e Inicio](/primeros-pasos/ingreso).
+Ingrese a [pos.facilerp.com](https://pos.facilerp.com) con su usuario. Las ventas se registran en el **punto de venta asignado a su usuario** (por ejemplo, LIMA), y la serie del comprobante depende de él. Ese punto de venta se define al crear el usuario, en [Usuarios](/mantenimiento/usuarios).
+
+<Note>
+  El selector **Punto de venta** de la pantalla de Inicio solo filtra los indicadores de esa pantalla. No cambia el punto de venta en el que se registran sus ventas.
+</Note>
 
 Tenga a mano el RUC o DNI del cliente y el código o nombre de los productos.
 
 ## Pasos para registrar una venta
 
 <Info>
-  Las capturas corresponden a un ejemplo real: la **Nota de Pedido 1018-2** a FACILSOFT E.I.R.L. (RUC 20601863228) por S/ 100.00.
+  Las capturas corresponden a un ejemplo real: la **Nota de Pedido 1018-2** a FACILSOFT E.I.R.L. (RUC 20601863228) por S/ 100.00. Cada captura tiene dos pestañas: **Web** (computadora) y **Móvil** (celular).
 </Info>
 
 <Steps>
   <Step title="Abra el formulario de venta">
-    Toque el menú (≡) y elija **Comprobantes → Ventas**. También puede usar **Registrar Venta → Ver** en la pantalla de Inicio. Se abre la pantalla **Comprobante de venta**.
+    En el menú lateral elija **Comprobantes → Ventas**. En el celular, primero toque el menú (≡) para abrirlo. También puede usar **Registrar Venta → Ver** en la pantalla de Inicio. Se abre la pantalla **Registrar Venta**.
 
-    <Frame>
-      <img src="/images/comprobantes/venta/menu.jpg" alt="Menú: Comprobantes → Ventas" />
-    </Frame>
+    <Tabs>
+      <Tab title="Web">
+        <Frame>
+          <img src="/images/comprobantes/venta/menu.jpg" alt="Menú: Comprobantes → Ventas" />
+        </Frame>
+      </Tab>
+      <Tab title="Móvil">
+        <Frame>
+          <img src="/images/comprobantes/venta/menu-movil.jpg" alt="Menú: Comprobantes → Ventas" style={{ maxWidth: "360px", margin: "0 auto" }} />
+        </Frame>
+      </Tab>
+    </Tabs>
   </Step>
 
   <Step title="Complete la cabecera">
     - **Tipo de comprobante:** Boleta de Venta, Factura, Nota de Pedido o Ticket. Use Factura si el cliente tiene RUC y Boleta para personas con DNI.
-    - **Numeración:** se asigna sola según el tipo y el punto de venta (por ejemplo, F006-1 para Factura o 1018-2 para Nota de Pedido). No se edita.
+    - **Numeración:** se asigna sola según el tipo y el punto de venta de su usuario (por ejemplo, F006-1 para Factura o 1018-2 para Nota de Pedido). No se edita.
     - **Fecha de emisión:** por defecto, la fecha de hoy.
     - **Moneda:** Soles o Dólares. El **Tipo de cambio** del día se muestra como referencia.
 
@@ -38,9 +51,18 @@ Tenga a mano el RUC o DNI del cliente y el código o nombre de los productos.
       La **Nota de Pedido** es un documento interno: se guarda en el sistema pero no se registra en contabilidad.
     </Note>
 
-    <Frame>
-      <img src="/images/comprobantes/venta/cabecera.jpg" alt="Tipo de comprobante: Nota de Pedido" />
-    </Frame>
+    <Tabs>
+      <Tab title="Web">
+        <Frame>
+          <img src="/images/comprobantes/venta/cabecera.jpg" alt="Tipo de comprobante: Nota de Pedido" />
+        </Frame>
+      </Tab>
+      <Tab title="Móvil">
+        <Frame>
+          <img src="/images/comprobantes/venta/cabecera-movil.jpg" alt="Tipo de comprobante: Nota de Pedido" style={{ maxWidth: "360px", margin: "0 auto" }} />
+        </Frame>
+      </Tab>
+    </Tabs>
   </Step>
 
   <Step title="Agregue los ítems">
@@ -49,21 +71,48 @@ Tenga a mano el RUC o DNI del cliente y el código o nombre de los productos.
     - Busque el producto escribiendo en **Valor**. Con **Filtrar por** elija si busca por **Nombre** o por **Código**. La lista se filtra mientras escribe.
     - El interruptor **Existencias (Con stock disponible)** muestra solo productos con stock. Desactívelo para ver todo el catálogo.
 
-    <Frame>
-      <img src="/images/comprobantes/venta/buscar-item.jpg" alt="Búsqueda del producto y botón +" />
-    </Frame>
+    <Tabs>
+      <Tab title="Web">
+        <Frame>
+          <img src="/images/comprobantes/venta/buscar-item.jpg" alt="Búsqueda del producto y botón +" />
+        </Frame>
+      </Tab>
+      <Tab title="Móvil">
+        <Frame>
+          <img src="/images/comprobantes/venta/buscar-item-movil.jpg" alt="Búsqueda del producto y botón +" style={{ maxWidth: "360px", margin: "0 auto" }} />
+        </Frame>
+      </Tab>
+    </Tabs>
 
     El ícono de documento abre el detalle del producto: **Stocks** por almacén (ALMACEN, LIMA, R.M.A., TACNA), **Precios** e **Imágenes**.
 
-    <Frame>
-      <img src="/images/comprobantes/venta/detalle-item.jpg" alt="Stock del producto por almacén" />
-    </Frame>
+    <Tabs>
+      <Tab title="Web">
+        <Frame>
+          <img src="/images/comprobantes/venta/detalle-item.jpg" alt="Stock del producto por almacén" />
+        </Frame>
+      </Tab>
+      <Tab title="Móvil">
+        <Frame>
+          <img src="/images/comprobantes/venta/detalle-item-movil.jpg" alt="Stock del producto por almacén" style={{ maxWidth: "360px", margin: "0 auto" }} />
+        </Frame>
+      </Tab>
+    </Tabs>
 
     Presione **+** junto al producto y complete **Cantidad**, **Unidad de Medida**, **Precio** y **Descuento (%)**. Deje activado **Aplicar Impuestos** si el ítem está afecto a IGV. Luego presione **Registrar** en esa ventana.
 
-    <Frame>
-      <img src="/images/comprobantes/venta/anadir-item.jpg" alt="Precio, descuento y botón Registrar del ítem" />
-    </Frame>
+    <Tabs>
+      <Tab title="Web">
+        <Frame>
+          <img src="/images/comprobantes/venta/anadir-item.jpg" alt="Precio, descuento y botón Registrar del ítem" />
+        </Frame>
+      </Tab>
+      <Tab title="Móvil">
+        <Frame>
+          <img src="/images/comprobantes/venta/anadir-item-movil.jpg" alt="Precio, descuento y botón Registrar del ítem" style={{ maxWidth: "360px", margin: "0 auto" }} />
+        </Frame>
+      </Tab>
+    </Tabs>
 
     <Tip>
       **Registrar** en esta ventana solo agrega el ítem a la venta; todavía no emite nada. Puede seguir agregando productos o cerrar la lista con la **X**.
@@ -73,9 +122,18 @@ Tenga a mano el RUC o DNI del cliente y el código o nombre de los productos.
   <Step title="Revise los ítems y totales">
     Cada ítem aparece con su cantidad y precio. Use el lápiz para editarlo o el tacho para quitarlo. Debajo verá **Precio de Venta**, **Descuento Global (%)**, **Subtotal**, **Impuestos (IGV)** y **Total**. Por defecto, el precio ingresado incluye IGV: un ítem de S/ 100.00 da Subtotal S/ 84.75 e IGV S/ 15.25. Si su empresa trabaja con precios sin IGV, esto se cambia en la configuración de FacilERP.
 
-    <Frame>
-      <img src="/images/comprobantes/venta/items-totales.jpg" alt="Ítem agregado y total" />
-    </Frame>
+    <Tabs>
+      <Tab title="Web">
+        <Frame>
+          <img src="/images/comprobantes/venta/items-totales.jpg" alt="Ítem agregado y total" />
+        </Frame>
+      </Tab>
+      <Tab title="Móvil">
+        <Frame>
+          <img src="/images/comprobantes/venta/items-totales-movil.jpg" alt="Ítem agregado y total" style={{ maxWidth: "360px", margin: "0 auto" }} />
+        </Frame>
+      </Tab>
+    </Tabs>
   </Step>
 
   <Step title="Seleccione el cliente">
@@ -84,29 +142,78 @@ Tenga a mano el RUC o DNI del cliente y el código o nombre de los productos.
     - **Cliente existente:** presione **+** junto al cliente. Se abre **Datos de Facturación** con Nro. documento, Razón social, Dirección, Email, Teléfono y Contacto. Revise los datos y presione **Registrar**.
     - **Cliente nuevo:** si la búsqueda muestra "No data available", presione **+ Nuevo**.
 
-    <Frame>
-      <img src="/images/comprobantes/venta/buscar-cliente.jpg" alt="Búsqueda del cliente por documento y botón Nuevo" />
-    </Frame>
+    <Tabs>
+      <Tab title="Web">
+        <Frame>
+          <img src="/images/comprobantes/venta/buscar-cliente.jpg" alt="Búsqueda del cliente por documento y botón Nuevo" />
+        </Frame>
+      </Tab>
+      <Tab title="Móvil">
+        <Frame>
+          <img src="/images/comprobantes/venta/buscar-cliente-movil.jpg" alt="Búsqueda del cliente por documento y botón Nuevo" style={{ maxWidth: "360px", margin: "0 auto" }} />
+        </Frame>
+      </Tab>
+    </Tabs>
+
+    <Tabs>
+      <Tab title="Web">
+        <Frame>
+          <img src="/images/comprobantes/venta/datos-facturacion.jpg" alt="Datos de Facturación del cliente y botón Registrar" />
+        </Frame>
+      </Tab>
+      <Tab title="Móvil">
+        <Frame>
+          <img src="/images/comprobantes/venta/datos-facturacion-movil.jpg" alt="Datos de Facturación del cliente y botón Registrar" style={{ maxWidth: "360px", margin: "0 auto" }} />
+        </Frame>
+      </Tab>
+    </Tabs>
 
     <Accordion title="Crear un cliente nuevo">
       En **Agregar cliente**, pestaña **Ficha**: elija el **Tipo de documento** (DNI, RUC, CE, Pasaporte o Doc.trib.no.dom.sin.ruc), escriba el **Número** y presione la **lupa**. El sistema completa el **Nombre / Razón social**. Email y Teléfono son opcionales.
 
-      <Frame>
-        <img src="/images/comprobantes/venta/nuevo-cliente-ficha.jpg" alt="Tipo de documento, número y razón social" />
-      </Frame>
+      <Tabs>
+        <Tab title="Web">
+          <Frame>
+            <img src="/images/comprobantes/venta/nuevo-cliente-ficha.jpg" alt="Tipo de documento, número y razón social" />
+          </Frame>
+        </Tab>
+        <Tab title="Móvil">
+          <Frame>
+            <img src="/images/comprobantes/venta/nuevo-cliente-ficha-movil.jpg" alt="Tipo de documento, número y razón social" style={{ maxWidth: "360px", margin: "0 auto" }} />
+          </Frame>
+        </Tab>
+      </Tabs>
 
       En la pestaña **Dirección**, la lupa también completa Dirección, Departamento, Provincia, Distrito y Ubigeo. Revíselos y presione **Registrar**.
 
-      <Frame>
-        <img src="/images/comprobantes/venta/nuevo-cliente-direccion.jpg" alt="Dirección completada y botón Registrar" />
-      </Frame>
+      <Tabs>
+        <Tab title="Web">
+          <Frame>
+            <img src="/images/comprobantes/venta/nuevo-cliente-direccion.jpg" alt="Dirección completada y botón Registrar" />
+          </Frame>
+        </Tab>
+        <Tab title="Móvil">
+          <Frame>
+            <img src="/images/comprobantes/venta/nuevo-cliente-direccion-movil.jpg" alt="Dirección completada y botón Registrar" style={{ maxWidth: "360px", margin: "0 auto" }} />
+          </Frame>
+        </Tab>
+      </Tabs>
     </Accordion>
 
     Al terminar, el cliente queda asignado a la venta, con los botones **Editar** y **Eliminar** para cambiarlo.
 
-    <Frame>
-      <img src="/images/comprobantes/venta/cliente-asignado.jpg" alt="Cliente asignado a la venta" />
-    </Frame>
+    <Tabs>
+      <Tab title="Web">
+        <Frame>
+          <img src="/images/comprobantes/venta/cliente-asignado.jpg" alt="Cliente asignado a la venta" />
+        </Frame>
+      </Tab>
+      <Tab title="Móvil">
+        <Frame>
+          <img src="/images/comprobantes/venta/cliente-asignado-movil.jpg" alt="Cliente asignado a la venta" style={{ maxWidth: "360px", margin: "0 auto" }} />
+        </Frame>
+      </Tab>
+    </Tabs>
   </Step>
 
   <Step title="Elija la forma de pago">
@@ -120,9 +227,18 @@ Tenga a mano el RUC o DNI del cliente y el código o nombre de los productos.
   <Step title="Registre el documento">
     Revise todo y presione **Registrar** al final de la página.
 
-    <Frame>
-      <img src="/images/comprobantes/venta/datos-adicionales.jpg" alt="Botón Registrar al final del formulario" />
-    </Frame>
+    <Tabs>
+      <Tab title="Web">
+        <Frame>
+          <img src="/images/comprobantes/venta/datos-adicionales.jpg" alt="Botón Registrar al final del formulario" />
+        </Frame>
+      </Tab>
+      <Tab title="Móvil">
+        <Frame>
+          <img src="/images/comprobantes/venta/datos-adicionales-movil.jpg" alt="Botón Registrar al final del formulario" style={{ maxWidth: "360px", margin: "0 auto" }} />
+        </Frame>
+      </Tab>
+    </Tabs>
 
     <Warning>
       Para Factura, Boleta o Ticket, este paso emite el comprobante y ya no se puede deshacer desde este formulario.
@@ -131,7 +247,7 @@ Tenga a mano el RUC o DNI del cliente y el código o nombre de los productos.
     Al terminar aparece **Documento de Venta registrado!** con la Fecha, el Tipo, la Serie y el Número. Use **Descargar** para obtener el documento y **Continuar** para empezar una venta nueva.
 
     <Frame>
-      <img src="/images/comprobantes/venta/registrado.jpg" alt="Confirmación con tipo, serie y número" />
+      <img src="/images/comprobantes/venta/registrado-movil.jpg" alt="Confirmación con tipo, serie y número" style={{ maxWidth: "360px", margin: "0 auto" }} />
     </Frame>
   </Step>
 </Steps>
